@@ -1,0 +1,19 @@
+.text-cursor-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.text-cursor-item {
+  position: absolute;
+  user-select: none;
+  white-space: nowrap;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: clamp(0.65rem, 1.1vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgb(var(--accent) / 0.85);
+  text-shadow: 0 0 1px rgb(var(--surface) / 0.4);
+}

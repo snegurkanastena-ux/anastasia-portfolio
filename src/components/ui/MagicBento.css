@@ -1,0 +1,105 @@
+/* Подсветка плашек: radial border-glow + опциональный фоновый spotlight в секции */
+
+.magic-bento-section {
+  position: relative;
+}
+
+.magic-bento-spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.magic-bento-spotlight__blob {
+  position: absolute;
+  width: min(42rem, 140%);
+  height: min(42rem, 140%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle closest-side,
+    rgb(var(--primary) / 0.14) 0%,
+    rgb(var(--primary) / 0.06) 38%,
+    transparent 72%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  will-change: left, top, opacity;
+}
+
+.magic-bento-card {
+  position: relative;
+  --mb-glow-x: 50%;
+  --mb-glow-y: 50%;
+  --mb-glow-intensity: 0;
+  --mb-glow-radius: 260px;
+}
+
+.magic-bento-card--border-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: radial-gradient(
+    var(--mb-glow-radius) circle at var(--mb-glow-x) var(--mb-glow-y),
+    rgb(var(--primary) / calc(var(--mb-glow-intensity) * 0.5)) 0%,
+    rgb(var(--primary) / calc(var(--mb-glow-intensity) * 0.22)) 32%,
+    transparent 62%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.2s ease;
+}
+
+.magic-bento-card__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.magic-bento-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgb(var(--primary) / 0.85);
+  box-shadow: 0 0 6px rgb(var(--primary) / 0.35);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.magic-bento-card:hover .magic-bento-star {
+  opacity: 1;
+  animation: magic-bento-star-drift 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes magic-bento-star-drift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(var(--mb-dx, 4px), var(--mb-dy, -3px));
+  }
+}
+
+.magic-bento-ripple {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 4;
+  background: radial-gradient(
+    circle,
+    rgb(var(--primary) / 0.35) 0%,
+    rgb(var(--primary) / 0.12) 38%,
+    transparent 68%
+  );
+}

@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Палитра (только через переменные). Светлая / тёмная — без brown/orange/coral.
+ * `muted` в ТЗ = поверхность панели → --muted-surface; вторичный текст → --muted-fg.
+ */
+:root {
+  color-scheme: light;
+  --background: 232 240 240;
+  --card: 242 247 247;
+  --primary: 255 90 95;
+  --foreground: 10 74 85;
+  --muted-surface: 224 234 234;
+  --muted-fg: 72 108 115;
+  --border: 188 204 206;
+  --primary-foreground: 242 247 247;
+  --void: 10 42 50;
+  --on-void: 232 248 248;
+  --rim: 255 255 255;
+  --depth: 10 26 32;
+  --code-stream-opacity: 0.02;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-fast: 180ms;
+  --motion-base: 220ms;
+  --motion-slow: 320ms;
+
+  /* Алиасы под существующие utility-классы (только числовые тройки для rgb(var(--…))) */
+  --surface: 232 240 240;
+  --elevated: 242 247 247;
+  --plate: 242 247 247;
+  --ink: 10 74 85;
+  --muted: 72 108 115;
+  --line: 188 204 206;
+  --accent: 255 90 95;
+  --accent-ink: 255 255 255;
+  /** Заголовки (светлая тема) */
+  --heading: 10 74 85;
+  --primary-hover: 255 59 65;
+}
+
+.dark {
+  color-scheme: dark;
+  /* Фон и карточки — без изменений */
+  --background: 10 26 32;
+  --card: 12 32 37;
+  --muted-surface: 15 48 57;
+  --void: 8 18 22;
+  --rim: 255 255 255;
+  --depth: 0 0 0;
+  --code-stream-opacity: 0.028;
+
+  --surface: 10 26 32;
+  --elevated: 12 32 37;
+  --plate: 12 32 37;
+
+  /* Текст и акценты (ТЗ) */
+  --heading: 255 255 255;
+  --foreground: 199 212 214;
+  --muted: 199 212 214;
+  --muted-fg: 199 212 214;
+  --ink: 199 212 214;
+  --primary: 255 90 95;
+  --primary-hover: 255 59 65;
+  --primary-foreground: 255 255 255;
+  --border: 255 255 255;
+  --line: 255 255 255;
+  --accent: 255 90 95;
+  --accent-ink: 255 255 255;
+  --on-void: 199 212 214;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply min-h-screen bg-background font-sans text-editorial-base text-foreground antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background-color: rgb(var(--primary) / 0.18);
+    color: inherit;
+  }
+}
+
+@layer components {
+  .heading-hero {
+    @apply font-display text-editorial-hero font-normal text-[rgb(var(--heading))];
+  }
+  .heading-section {
+    @apply font-display text-editorial-h1 text-[rgb(var(--heading))];
+  }
+  .heading-subsection {
+    @apply font-display text-editorial-h2 text-[rgb(var(--heading))];
+  }
+  .heading-pullquote {
+    @apply font-display text-editorial-h2 text-[rgb(var(--heading))];
+  }
+  .heading-invert {
+    @apply font-display text-editorial-h1 text-[rgb(var(--heading))];
+  }
+  .heading-cover-xl {
+    @apply font-display text-editorial-display-lg text-white;
+  }
+  .heading-cover-lg {
+    @apply font-display text-editorial-h1 text-white;
+  }
+  .heading-cover-md {
+    @apply font-display text-editorial-display text-white;
+  }
+  .heading-cover-sm {
+    @apply font-display text-editorial-h2 text-white;
+  }
+  .heading-interlude {
+    @apply font-display text-editorial-h3 font-normal text-[rgb(var(--heading))] sm:text-editorial-h2;
+  }
+  .heading-drawer-title {
+    @apply font-display text-[rgb(var(--heading))] text-editorial-h2 sm:text-editorial-h1;
+  }
+  .heading-doc {
+    @apply font-display text-editorial-h3 text-[rgb(var(--heading))];
+  }
+  /** Метки секций: без ALL CAPS, спокойный акцент */
+  .eyebrow {
+    @apply font-sans text-editorial-label font-semibold tracking-wide text-primary;
+  }
+}
+
+/* Базовый холст без «бумажно-коричневых» градиентов — паттерн даёт слой SiteBackground */
+.app-canvas {
+  background-color: rgb(var(--background));
+}
+
+.code-stream-root {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  user-select: none;
+}
+
+.code-stream-fade {
+  opacity: var(--code-stream-opacity);
+}
+
+.code-stream-column {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 18%,
+    black 82%,
+    transparent
+  );
+}
+
