@@ -56,6 +56,14 @@ export function PortfolioContent() {
           result: t("portfolioPage.neiroResult"),
           trust: t("portfolioPage.neiroTrust"),
         },
+        songmuse: {
+          title: t("portfolioPage.songmuseTitle"),
+          intro: t("portfolioPage.songmuseIntro"),
+          task: t("portfolioPage.songmuseTask"),
+          done: t("portfolioPage.songmuseDone"),
+          result: t("portfolioPage.songmuseResult"),
+          trust: t("portfolioPage.songmuseTrust"),
+        },
         salieva: {
           title: t("portfolioPage.salievaTitle"),
           intro: t("portfolioPage.salievaIntro"),

@@ -35,6 +35,12 @@ export const PROJECT_CASES = [
       "https://api.microlink.io/?url=https%3A%2F%2Fneiroera.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&viewport.deviceScaleFactor=1",
   },
   {
+    id: "songmuse",
+    href: "https://song-muse-ai-89.lovable.app/",
+    coverSrc:
+      "https://api.microlink.io/?url=https%3A%2F%2Fsong-muse-ai-89.lovable.app%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&viewport.deviceScaleFactor=1",
+  },
+  {
     id: "salieva",
     href: "https://snegurkanastena-ux.github.io/ekaterina-salieva-site/",
     coverSrc:
