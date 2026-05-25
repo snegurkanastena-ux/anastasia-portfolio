@@ -214,7 +214,7 @@ export function HomeContent() {
         >
           {featured.map((item) => {
             const project = PROJECT_CASES.find((p) => p.id === item.id);
-            if (!project) return null;
+            if (!project || !("href" in project)) return null;
             return (
               <motion.div key={item.id} variants={listItem} className="h-full">
                 <a

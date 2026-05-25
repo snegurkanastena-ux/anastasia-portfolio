@@ -64,6 +64,22 @@ export function PortfolioContent() {
           result: t("portfolioPage.salievaResult"),
           trust: t("portfolioPage.salievaTrust"),
         },
+        taskplanner: {
+          title: t("portfolioPage.taskplannerTitle"),
+          intro: t("portfolioPage.taskplannerIntro"),
+          task: t("portfolioPage.taskplannerTask"),
+          done: t("portfolioPage.taskplannerDone"),
+          result: t("portfolioPage.taskplannerResult"),
+          trust: t("portfolioPage.taskplannerTrust"),
+        },
+        reportapp: {
+          title: t("portfolioPage.reportappTitle"),
+          intro: t("portfolioPage.reportappIntro"),
+          task: t("portfolioPage.reportappTask"),
+          done: t("portfolioPage.reportappDone"),
+          result: t("portfolioPage.reportappResult"),
+          trust: t("portfolioPage.reportappTrust"),
+        },
       }) satisfies Record<ProjectCaseId, CaseCopy>,
     [t],
   );
@@ -139,14 +155,20 @@ export function PortfolioContent() {
                     </div>
                   </div>
                   <p className="mt-4 border-t border-border/15 pt-3 text-editorial-caption font-medium leading-snug text-muted">{c.trust}</p>
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                  >
-                    {t("portfolioPage.ctaViewProject")}
-                  </a>
+                  {"href" in project ? (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    >
+                      {t("portfolioPage.ctaViewProject")}
+                    </a>
+                  ) : (
+                    <span className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-lg border border-primary/35 bg-primary/8 px-5 text-sm font-semibold text-primary">
+                      {t("portfolioPage.ctaInProgress")}
+                    </span>
+                  )}
                 </div>
               </motion.article>
             );

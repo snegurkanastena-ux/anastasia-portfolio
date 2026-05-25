@@ -40,6 +40,14 @@ export const PROJECT_CASES = [
     coverSrc:
       "https://api.microlink.io/?url=https%3A%2F%2Fsnegurkanastena-ux.github.io%2Fekaterina-salieva-site%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&viewport.deviceScaleFactor=1",
   },
+  {
+    id: "taskplanner",
+    coverSrc: "/images/projects/taskplanner.svg",
+  },
+  {
+    id: "reportapp",
+    coverSrc: "/images/projects/reportapp.svg",
+  },
 ] as const;
 
 export type ProjectCaseId = (typeof PROJECT_CASES)[number]["id"];

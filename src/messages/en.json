@@ -142,6 +142,7 @@
     "panelDoneLabel": "What we built",
     "panelEffectLabel": "Outcome",
     "ctaViewProject": "View the project",
+    "ctaInProgress": "Project in progress",
     "melanomusicTitle": "Melano Music",
     "melanomusicIntro": "A music project site: materials pulled into one clear story.",
     "melanomusicTask": "Present the project as a whole without losing the point across tracks and copy.",
@@ -159,7 +160,19 @@
     "salievaTask": "Signal expertise without overwhelming detail.",
     "salievaDone": "Work grid, tight highlights, and a clear route to contact.",
     "salievaResult": "Stronger perceived seniority: you instantly see who you\u2019re dealing with.",
-    "salievaTrust": "Boosts trust and willingness to start a conversation."
+    "salievaTrust": "Boosts trust and willingness to start a conversation.",
+    "taskplannerTitle": "Team task planner",
+    "taskplannerIntro": "An Android app for tasks, employees, deadlines, voice input, and daily summaries.",
+    "taskplannerTask": "Build a team workflow tool: an admin assigns tasks, employees update progress, and the day ends with a clear summary.",
+    "taskplannerDone": "Tasks, calendar, employees, company roles, voice task creation, exact deadlines, achievements, and daily report screens.",
+    "taskplannerResult": "A testable mobile prototype that can already be installed on Android and expanded into a server-based team product.",
+    "taskplannerTrust": "Shows product thinking: not just screens, but team scenarios, statuses, motivation, and completion control.",
+    "reportappTitle": "Desktop reporting app",
+    "reportappIntro": "A practical desktop app for working with reports and reducing manual routine.",
+    "reportappTask": "Make report preparation and review faster so data does not have to be assembled manually every time.",
+    "reportappDone": "Application logic, reporting interface, and a foundation for automating repeated actions.",
+    "reportappResult": "Reports become faster to prepare, easier to check, and more convenient inside the workflow.",
+    "reportappTrust": "Strengthens the portfolio by showing useful work tools, not only websites."
   },
   "servicesPage": {
     "title": "I build websites that bring leads \u2014 not just sit online",
