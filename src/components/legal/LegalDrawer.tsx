@@ -105,13 +105,13 @@ export function LegalDrawer({
               <article className="mt-10 space-y-10 pb-10">
                 <section id="legal-privacy" className="scroll-mt-6">
                   <h3 className="heading-doc">{t("offerPage.privacyTitle")}</h3>
-                  <p className="mt-5 rounded-editorial-lg border border-dashed border-line/65 bg-surface/50 p-5 text-editorial-base leading-relaxed text-muted dark:bg-surface/28">
+                  <p className="mt-5 whitespace-pre-line rounded-editorial-lg border border-line/65 bg-surface/50 p-5 text-editorial-base leading-relaxed text-muted dark:bg-surface/28">
                     {t("offerPage.privacyPlaceholder")}
                   </p>
                 </section>
                 <section id="legal-offer" className="scroll-mt-6">
                   <h3 className="heading-doc">{t("offerPage.offerTitle")}</h3>
-                  <p className="mt-5 rounded-editorial-lg border border-dashed border-line/65 bg-surface/50 p-5 text-editorial-base leading-relaxed text-muted dark:bg-surface/28">
+                  <p className="mt-5 whitespace-pre-line rounded-editorial-lg border border-line/65 bg-surface/50 p-5 text-editorial-base leading-relaxed text-muted dark:bg-surface/28">
                     {t("offerPage.offerPlaceholder")}
                   </p>
                 </section>

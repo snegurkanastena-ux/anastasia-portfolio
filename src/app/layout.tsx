@@ -23,11 +23,30 @@ const signature = Caveat({
   variable: "--font-signature",
 });
 
-/** SSR-значения по умолчанию (lang=ru); при переключении EN клиент обновит title/description. */
+const siteUrl = "https://www.xn----8sb1aregjk5f.xn--p1ai";
+const siteDescription =
+  "Портфолио: сайты, интерфейсы и digital-проекты. Vibe Coder / AI-first веб-дизайнер.";
+const siteTitle = `${BRAND_DISPLAY_NAME_RU} — портфолио`;
+
 export const metadata: Metadata = {
-  title: `${BRAND_DISPLAY_NAME_RU} — портфолио`,
-  description:
-    "Портфолио: сайты, интерфейсы и digital-проекты. Vibe Coder / AI-first веб-дизайнер.",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  alternates: {
+    canonical: siteUrl,
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    title: siteTitle,
+    description: siteDescription,
+    siteName: siteTitle,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({

@@ -186,8 +186,8 @@
     "panelWhenLabel": "When you need it",
     "panelResultLabel": "Result",
     "processTitle": "How the work is shaped",
-    "process1Title": "We align on the goal",
-    "process1Text": "What the page must sell and to whom",
+    "process1Title": "I align the goal",
+    "process1Text": "What the page must sell and who it is for",
     "process2Title": "Built for your buyer",
     "process2Text": "From the first screen to the lead \u2014 no filler",
     "process3Title": "Design and launch",
@@ -233,12 +233,12 @@
   },
   "offerPage": {
     "title": "Documents",
-    "lead": "Legal sections of the site. Final texts will be added separately.",
+    "lead": "Core terms for work, payment, and data processing. These texts are written for an independent specialist website and may be clarified for a specific project.",
     "tocLabel": "Document sections",
     "privacyTitle": "Privacy policy",
-    "privacyPlaceholder": "[Insert final privacy policy text.]",
+    "privacyPlaceholder": "I process only the data you send through the contact form or messengers: name, contact details, and message text. This data is used to reply to your request, discuss the project, prepare an offer, and fulfill agreed work.\n\nData is not sold or shared with third parties, except for services that technically support the website, email, analytics, and payment processing. You can request deletion or correction of your data by contacting me by email or Telegram.\n\nBy continuing to use the site, you agree to the use of cookies and technical data needed for the site to work correctly.",
     "offerTitle": "Public offer",
-    "offerPlaceholder": "[Insert final public offer text.]"
+    "offerPlaceholder": "The information on this website describes services for creating websites, interfaces, digital projects, and AI-first solutions. The exact scope, timeline, price, and work format are agreed individually before the project starts.\n\nA request through the website or messenger does not automatically create a contract: terms are confirmed after the task is discussed. Payment is made according to the agreed terms.\n\nIf a project has already started, any refund is calculated based on the completed scope of work and actual costs incurred."
   },
   "paymentPage": {
     "title": "Payment",
