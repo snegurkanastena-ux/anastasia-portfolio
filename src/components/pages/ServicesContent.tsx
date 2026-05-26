@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import { ContactChoiceTrigger } from "@/components/brand/ContactChoiceModal";
+import { SiteIdeaTrigger } from "@/components/brand/SiteIdeaModal";
 import { Container } from "@/components/ui/Container";
 import { HeadingTextType } from "@/components/ui/HeadingTextType";
 import { primaryCtaClassNames } from "@/components/ui/Button";
@@ -148,7 +148,7 @@ export function ServicesContent() {
           ))}
         </ul>
         <div className="mt-6 flex flex-wrap gap-3">
-          <ContactChoiceTrigger className={`${primaryCtaClassNames("lg")} min-w-[12rem]`}>{t("servicesPage.ctaButton")}</ContactChoiceTrigger>
+          <SiteIdeaTrigger className={`${primaryCtaClassNames("lg")} min-w-[12rem]`}>{t("servicesPage.ctaButton")}</SiteIdeaTrigger>
           <Link
             href="/portfolio"
             className="inline-flex h-11 min-w-[10rem] items-center justify-center rounded-lg border border-border/20 px-6 text-editorial-sm font-semibold text-[rgb(var(--heading))] transition-[border-color,opacity] duration-200 hover:border-border/35 hover:opacity-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"

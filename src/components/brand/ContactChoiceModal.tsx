@@ -21,7 +21,13 @@ function isValidEmail(v: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 }
 
-function ContactChoicePanel({ onClose }: { onClose: () => void }) {
+export function ContactChoicePanel({
+  onClose,
+  initialMessage = "",
+}: {
+  onClose: () => void;
+  initialMessage?: string;
+}) {
   const { t } = useLocale();
   const titleId = useId();
   const nameId = useId();
@@ -31,7 +37,7 @@ function ContactChoicePanel({ onClose }: { onClose: () => void }) {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(initialMessage);
   const [sendState, setSendState] = useState<SendState>("idle");
   const [errorIsConfig, setErrorIsConfig] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
@@ -246,9 +252,11 @@ function ContactChoicePanel({ onClose }: { onClose: () => void }) {
 export function ContactChoiceTrigger({
   className,
   children,
+  initialMessage,
 }: {
   className?: string;
   children: ReactNode;
+  initialMessage?: string;
 }) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -273,7 +281,7 @@ export function ContactChoiceTrigger({
       </button>
       {mounted && open
         ? createPortal(
-            <ContactChoicePanel onClose={handleClose} />,
+            <ContactChoicePanel onClose={handleClose} initialMessage={initialMessage} />,
             document.body,
           )
         : null}
