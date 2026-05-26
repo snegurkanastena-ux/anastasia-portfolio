@@ -23,13 +23,14 @@ const signature = Caveat({
   variable: "--font-signature",
 });
 
-const siteUrl = "https://www.xn----8sb1aregjk5f.xn--p1ai";
+const siteUrl = "https://www.про-сайты.рф";
+const siteUrlAscii = "https://www.xn----8sb1aregjk5f.xn--p1ai";
 const siteDescription =
   "Портфолио: сайты, интерфейсы и digital-проекты. Vibe Coder / AI-first веб-дизайнер.";
 const siteTitle = `${BRAND_DISPLAY_NAME_RU} — портфолио`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrlAscii),
   title: siteTitle,
   description: siteDescription,
   alternates: {
