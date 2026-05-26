@@ -30,8 +30,9 @@ const listItem = {
 const cardSurface =
   "rounded-lg border border-border/20 bg-card p-5 transition-[border-color,opacity,transform,box-shadow] duration-300 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_6px_32px_rgb(var(--primary)/0.22),0_0_0_1px_rgb(var(--primary)/0.08)] sm:p-6";
 
-const whenLabelClass = "text-editorial-label font-bold tracking-wide text-primary";
-const resultLabelClass = "text-editorial-label font-bold tracking-wide text-[rgb(var(--heading))]";
+const labelBaseClass = "inline-flex rounded-sm px-1.5 py-0.5 text-editorial-label font-bold tracking-wide";
+const whenLabelClass = `${labelBaseClass} bg-primary/10 text-primary`;
+const resultLabelClass = `${labelBaseClass} border border-primary/35 bg-primary/5 text-primary`;
 
 export function ServicesContent() {
   const { t, locale } = useLocale();

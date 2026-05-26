@@ -36,13 +36,13 @@ export function SiteHeader() {
           className="group flex w-full min-w-0 flex-1 items-center gap-5 lg:gap-6"
           aria-label={t("brand.headerLockup")}
         >
-          <span className="relative grid h-20 w-20 shrink-0 place-items-center overflow-hidden rounded-full border border-primary/35 bg-[radial-gradient(circle_at_50%_45%,rgb(var(--card))_0%,rgb(var(--void))_78%)] shadow-[0_0_28px_rgb(var(--primary)/0.18)]">
+          <span className="relative grid h-20 w-20 shrink-0 place-items-center overflow-hidden rounded-full border border-primary/35 bg-[radial-gradient(circle_at_50%_45%,rgb(var(--card))_0%,rgb(var(--void))_78%)] p-1.5 shadow-[0_0_28px_rgb(var(--primary)/0.18)]">
             <Image
               src={HEADER_LOGO}
               alt=""
-              width={88}
-              height={88}
-              className="h-[5.6rem] w-[5.6rem] max-w-none object-cover object-center dark:brightness-100"
+              width={68}
+              height={68}
+              className="h-full w-full rounded-full object-contain object-center dark:brightness-100"
               priority
             />
           </span>
