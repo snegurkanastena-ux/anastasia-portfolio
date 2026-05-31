@@ -72,6 +72,14 @@ export function PortfolioContent() {
           result: t("portfolioPage.salievaResult"),
           trust: t("portfolioPage.salievaTrust"),
         },
+        runcoffee: {
+          title: t("portfolioPage.runcoffeeTitle"),
+          intro: t("portfolioPage.runcoffeeIntro"),
+          task: t("portfolioPage.runcoffeeTask"),
+          done: t("portfolioPage.runcoffeeDone"),
+          result: t("portfolioPage.runcoffeeResult"),
+          trust: t("portfolioPage.runcoffeeTrust"),
+        },
         taskplanner: {
           title: t("portfolioPage.taskplannerTitle"),
           intro: t("portfolioPage.taskplannerIntro"),

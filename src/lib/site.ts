@@ -47,6 +47,12 @@ export const PROJECT_CASES = [
       "https://api.microlink.io/?url=https%3A%2F%2Fsnegurkanastena-ux.github.io%2Fekaterina-salieva-site%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&viewport.deviceScaleFactor=1",
   },
   {
+    id: "runcoffee",
+    href: "https://snegurkanastena-ux.github.io/run-coffee-demo/",
+    coverSrc:
+      "https://api.microlink.io/?url=https%3A%2F%2Fsnegurkanastena-ux.github.io%2Frun-coffee-demo%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&viewport.deviceScaleFactor=1",
+  },
+  {
     id: "taskplanner",
     coverSrc: "/images/projects/taskplanner.svg",
   },
