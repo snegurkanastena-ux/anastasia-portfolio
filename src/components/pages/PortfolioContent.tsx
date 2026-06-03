@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import { Container } from "@/components/ui/Container";
 import { TextType } from "@/components/ui/TextType";
@@ -36,6 +36,7 @@ export function PortfolioContent() {
   const { t, locale } = useLocale();
   const reduceMotion = useReducedMotion();
   const staggerLists = !reduceMotion;
+  const [openScreensProject, setOpenScreensProject] = useState<ProjectCaseId | null>(null);
 
   const copy = useMemo(
     () =>
@@ -79,6 +80,22 @@ export function PortfolioContent() {
           done: t("portfolioPage.runcoffeeDone"),
           result: t("portfolioPage.runcoffeeResult"),
           trust: t("portfolioPage.runcoffeeTrust"),
+        },
+        rada: {
+          title: t("portfolioPage.radaTitle"),
+          intro: t("portfolioPage.radaIntro"),
+          task: t("portfolioPage.radaTask"),
+          done: t("portfolioPage.radaDone"),
+          result: t("portfolioPage.radaResult"),
+          trust: t("portfolioPage.radaTrust"),
+        },
+        t2academy: {
+          title: t("portfolioPage.t2academyTitle"),
+          intro: t("portfolioPage.t2academyIntro"),
+          task: t("portfolioPage.t2academyTask"),
+          done: t("portfolioPage.t2academyDone"),
+          result: t("portfolioPage.t2academyResult"),
+          trust: t("portfolioPage.t2academyTrust"),
         },
         taskplanner: {
           title: t("portfolioPage.taskplannerTitle"),
@@ -142,6 +159,7 @@ export function PortfolioContent() {
             const c = copy[project.id];
             const labelClass = "text-editorial-label font-semibold tracking-wide text-muted";
             const blockClass = "mt-1.5 text-editorial-sm font-medium leading-snug text-foreground sm:text-editorial-base sm:leading-snug";
+            const isScreensOpen = openScreensProject === project.id;
             return (
               <motion.article key={project.id} variants={listItem} className={`group flex h-full flex-col ${cardMediaFrame}`}>
                 <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-muted-surface/40">
@@ -180,6 +198,37 @@ export function PortfolioContent() {
                     >
                       {t("portfolioPage.ctaViewProject")}
                     </a>
+                  ) : "screenshots" in project ? (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => setOpenScreensProject(isScreensOpen ? null : project.id)}
+                        aria-expanded={isScreensOpen}
+                        className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                      >
+                        {isScreensOpen ? t("portfolioPage.ctaHideScreens") : t("portfolioPage.ctaViewProject")}
+                      </button>
+                      {isScreensOpen ? (
+                        <div className="mt-4 grid grid-cols-2 gap-3">
+                          {project.screenshots.map((src, index) => (
+                            <figure key={src} className="min-w-0">
+                              <div className="relative aspect-[591/1280] overflow-hidden rounded-lg border border-border/20 bg-muted-surface/40 shadow-[0_14px_32px_rgb(var(--foreground)/0.12)]">
+                                <Image
+                                  src={src}
+                                  alt={t(index === 0 ? "portfolioPage.taskplannerScreenshotHomeAlt" : "portfolioPage.taskplannerScreenshotCalendarAlt")}
+                                  fill
+                                  className="object-cover"
+                                  sizes="(max-width: 640px) 42vw, 150px"
+                                />
+                              </div>
+                              <figcaption className="mt-2 text-editorial-caption font-medium leading-tight text-muted">
+                                {t(index === 0 ? "portfolioPage.taskplannerScreenshotHomeCaption" : "portfolioPage.taskplannerScreenshotCalendarCaption")}
+                              </figcaption>
+                            </figure>
+                          ))}
+                        </div>
+                      ) : null}
+                    </>
                   ) : (
                     <span className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-lg border border-primary/35 bg-primary/8 px-5 text-sm font-semibold text-primary">
                       {t("portfolioPage.ctaInProgress")}

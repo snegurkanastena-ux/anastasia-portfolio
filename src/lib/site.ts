@@ -53,8 +53,21 @@ export const PROJECT_CASES = [
       "https://api.microlink.io/?url=https%3A%2F%2Fsnegurkanastena-ux.github.io%2Frun-coffee-demo%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&viewport.deviceScaleFactor=1",
   },
   {
+    id: "rada",
+    href: "https://snegurkanastena-ux.github.io/rada-demo/",
+    coverSrc:
+      "https://api.microlink.io/?url=https%3A%2F%2Fsnegurkanastena-ux.github.io%2Frada-demo%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&viewport.deviceScaleFactor=1",
+  },
+  {
+    id: "t2academy",
+    href: "https://t2-sales-training-platform.vercel.app/",
+    coverSrc:
+      "https://api.microlink.io/?url=https%3A%2F%2Ft2-sales-training-platform.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&viewport.deviceScaleFactor=1",
+  },
+  {
     id: "taskplanner",
     coverSrc: "/images/projects/taskplanner.svg",
+    screenshots: ["/images/projects/android-tasks-home.jpg", "/images/projects/android-tasks-calendar.jpg"],
   },
   {
     id: "reportapp",
