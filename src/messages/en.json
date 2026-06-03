@@ -235,7 +235,9 @@
     "taskplannerScreenshotHomeAlt": "Android app home screen with today tasks widget",
     "taskplannerScreenshotCalendarAlt": "Android app calendar screen with tasks for the selected date",
     "taskplannerScreenshotHomeCaption": "Tasks widget on the home screen",
-    "taskplannerScreenshotCalendarCaption": "Calendar and tasks by date"
+    "taskplannerScreenshotCalendarCaption": "Calendar and tasks by date",
+    "ctaOpenProject": "Open project",
+    "ctaCollapseDetails": "Collapse details"
   },
   "servicesPage": {
     "title": "I build websites that bring leads — not just sit online",

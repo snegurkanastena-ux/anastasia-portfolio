@@ -36,7 +36,7 @@ export function PortfolioContent() {
   const { t, locale } = useLocale();
   const reduceMotion = useReducedMotion();
   const staggerLists = !reduceMotion;
-  const [openScreensProject, setOpenScreensProject] = useState<ProjectCaseId | null>(null);
+  const [openProject, setOpenProject] = useState<ProjectCaseId | null>(null);
 
   const copy = useMemo(
     () =>
@@ -159,7 +159,7 @@ export function PortfolioContent() {
             const c = copy[project.id];
             const labelClass = "text-editorial-label font-semibold tracking-wide text-muted";
             const blockClass = "mt-1.5 text-editorial-sm font-medium leading-snug text-foreground sm:text-editorial-base sm:leading-snug";
-            const isScreensOpen = openScreensProject === project.id;
+            const isOpen = openProject === project.id;
             return (
               <motion.article key={project.id} variants={listItem} className={`group flex h-full flex-col ${cardMediaFrame}`}>
                 <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-muted-surface/40">
@@ -174,42 +174,23 @@ export function PortfolioContent() {
                 <div className="flex flex-1 flex-col p-4 sm:p-5">
                   <h2 className="heading-subsection text-pretty">{c.title}</h2>
                   <p className="mt-1.5 text-editorial-sm leading-snug text-muted sm:text-editorial-base">{c.intro}</p>
-                  <div className="mt-4 flex flex-1 flex-col gap-3.5">
-                    <div>
-                      <p className={labelClass}>{t("portfolioPage.panelTaskLabel")}</p>
-                      <p className={blockClass}>{c.task}</p>
-                    </div>
-                    <div>
-                      <p className={labelClass}>{t("portfolioPage.panelDoneLabel")}</p>
-                      <p className={blockClass}>{c.done}</p>
-                    </div>
-                    <div>
-                      <p className={labelClass}>{t("portfolioPage.panelEffectLabel")}</p>
-                      <p className={blockClass}>{c.result}</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 border-t border-border/15 pt-3 text-editorial-caption font-medium leading-snug text-muted">{c.trust}</p>
-                  {"href" in project ? (
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                    >
-                      {t("portfolioPage.ctaViewProject")}
-                    </a>
-                  ) : "screenshots" in project ? (
-                    <>
-                      <button
-                        type="button"
-                        onClick={() => setOpenScreensProject(isScreensOpen ? null : project.id)}
-                        aria-expanded={isScreensOpen}
-                        className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                      >
-                        {isScreensOpen ? t("portfolioPage.ctaHideScreens") : t("portfolioPage.ctaViewProject")}
-                      </button>
-                      {isScreensOpen ? (
-                        <div className="mt-4 grid grid-cols-2 gap-3">
+                  {isOpen ? (
+                    <div className="mt-4 flex flex-col gap-3.5 border-t border-border/15 pt-4">
+                      <div>
+                        <p className={labelClass}>{t("portfolioPage.panelTaskLabel")}</p>
+                        <p className={blockClass}>{c.task}</p>
+                      </div>
+                      <div>
+                        <p className={labelClass}>{t("portfolioPage.panelDoneLabel")}</p>
+                        <p className={blockClass}>{c.done}</p>
+                      </div>
+                      <div>
+                        <p className={labelClass}>{t("portfolioPage.panelEffectLabel")}</p>
+                        <p className={blockClass}>{c.result}</p>
+                      </div>
+                      <p className="border-t border-border/15 pt-3 text-editorial-caption font-medium leading-snug text-muted">{c.trust}</p>
+                      {"screenshots" in project ? (
+                        <div className="grid grid-cols-2 gap-3">
                           {project.screenshots.map((src, index) => (
                             <figure key={src} className="min-w-0">
                               <div className="relative aspect-[591/1280] overflow-hidden rounded-lg border border-border/20 bg-muted-surface/40 shadow-[0_14px_32px_rgb(var(--foreground)/0.12)]">
@@ -228,12 +209,26 @@ export function PortfolioContent() {
                           ))}
                         </div>
                       ) : null}
-                    </>
-                  ) : (
-                    <span className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-lg border border-primary/35 bg-primary/8 px-5 text-sm font-semibold text-primary">
-                      {t("portfolioPage.ctaInProgress")}
-                    </span>
-                  )}
+                      {"href" in project ? (
+                        <a
+                          href={project.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex h-10 w-full items-center justify-center rounded-lg border border-primary/35 bg-primary/8 px-5 text-sm font-semibold text-primary transition-colors duration-200 hover:border-primary hover:bg-primary/12 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                        >
+                          {t("portfolioPage.ctaOpenProject")}
+                        </a>
+                      ) : null}
+                    </div>
+                  ) : null}
+                  <button
+                    type="button"
+                    onClick={() => setOpenProject(isOpen ? null : project.id)}
+                    aria-expanded={isOpen}
+                    className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  >
+                    {isOpen ? t("portfolioPage.ctaCollapseDetails") : t("portfolioPage.ctaViewProject")}
+                  </button>
                 </div>
               </motion.article>
             );

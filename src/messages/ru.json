@@ -235,7 +235,9 @@
     "taskplannerScreenshotHomeAlt": "Главный экран Android-приложения с виджетом задач на сегодня",
     "taskplannerScreenshotCalendarAlt": "Экран календаря Android-приложения со списком задач на выбранную дату",
     "taskplannerScreenshotHomeCaption": "Виджет задач на главном экране",
-    "taskplannerScreenshotCalendarCaption": "Календарь и задачи на дату"
+    "taskplannerScreenshotCalendarCaption": "Календарь и задачи на дату",
+    "ctaOpenProject": "Открыть проект",
+    "ctaCollapseDetails": "Свернуть описание"
   },
   "servicesPage": {
     "title": "Создаю сайты, которые приводят заявки, а не просто «висят»",
