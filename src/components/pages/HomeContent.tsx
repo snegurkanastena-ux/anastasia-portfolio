@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useMemo } from "react";
 
 import { ContactChoiceTrigger } from "@/components/brand/ContactChoiceModal";
+import { SiteIdeaTrigger } from "@/components/brand/SiteIdeaModal";
 import { primaryCtaClassNames, secondaryCtaClassNames } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { HeadingTextType } from "@/components/ui/HeadingTextType";
@@ -135,6 +136,55 @@ export function HomeContent() {
     [t],
   );
 
+  const aiProofItems = [
+    {
+      title: t("home.aiProofAgentsTitle"),
+      text: t("home.aiProofAgentsText"),
+    },
+    {
+      title: t("home.aiProofWebTitle"),
+      text: t("home.aiProofWebText"),
+    },
+    {
+      title: t("home.aiProofContentTitle"),
+      text: t("home.aiProofContentText"),
+    },
+    {
+      title: t("home.aiProofVisualTitle"),
+      text: t("home.aiProofVisualText"),
+    },
+  ];
+
+  const certificateImages = [
+    { src: "/images/certificates/ai-agents-2-days.png", title: t("home.certificateAgentsFast") },
+    { src: "/images/certificates/gpt-agents-ai-bots.png", title: t("home.certificateAgentsBots") },
+    { src: "/images/certificates/vibe-coding-pro.png", title: t("home.certificateVibeCoding") },
+    { src: "/images/certificates/neural-content.png", title: t("home.certificateContent") },
+    { src: "/images/certificates/smm-optima.png", title: t("home.certificateSmm") },
+    { src: "/images/certificates/midjourney-money.png", title: t("home.certificateMidjourney") },
+    { src: "/images/certificates/neurovideo-pro.png", title: t("home.certificateVideo") },
+    { src: "/images/certificates/ai-agent-team.png", title: t("home.certificateAgentTeam") },
+  ];
+
+  const processSteps = [
+    {
+      title: t("home.process1Title"),
+      text: t("home.process1Text"),
+    },
+    {
+      title: t("home.process2Title"),
+      text: t("home.process2Text"),
+    },
+    {
+      title: t("home.process3Title"),
+      text: t("home.process3Text"),
+    },
+    {
+      title: t("home.process4Title"),
+      text: t("home.process4Text"),
+    },
+  ];
+
   const heroTitle = reduceMotion ? (
     <h1 className="heading-hero max-w-[min(100%,30ch)]" aria-label={t("home.heroTitle")}>{t("home.heroTitle")}</h1>
   ) : (
@@ -171,15 +221,17 @@ export function HomeContent() {
               {t("home.heroProof")}
             </p>
             <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
+              <SiteIdeaTrigger
+                className={`${primaryCtaClassNames("lg")} h-11 min-h-[2.75rem] min-w-[10.5rem] rounded-lg px-7 text-editorial-sm font-semibold tracking-wide`}
+              >
+                {t("cta.siteIdea")}
+              </SiteIdeaTrigger>
               <Link
                 href="/portfolio"
-                className={`${primaryCtaClassNames("lg")} h-11 min-h-[2.75rem] min-w-[10.5rem] rounded-lg px-7 text-editorial-sm font-semibold tracking-wide`}
+                className={`${secondaryCtaClassNames("lg")} h-11 min-h-[2.75rem] min-w-[10.5rem] px-7 text-editorial-sm`}
               >
                 {t("cta.projects")}
               </Link>
-              <ContactChoiceTrigger className={`${secondaryCtaClassNames("lg")} h-11 min-h-[2.75rem] min-w-[10.5rem] px-7 text-editorial-sm`}>
-                {t("cta.discuss")}
-              </ContactChoiceTrigger>
             </div>
           </div>
 
@@ -203,6 +255,87 @@ export function HomeContent() {
             {t("cta.viewServices")}
           </Link>
         </div>
+      </motion.section>
+
+      {/* ── AI PROOF ── */}
+      <motion.section className={`relative border-t border-border/20 pt-8 ${sectionGap}`} {...sectionMotion}>
+        <HeadingTextType as="h2" text={t("home.aiProofTitle")} typingSpeed={78} className="heading-section" />
+        <p className="mt-4 max-w-3xl text-editorial-base font-medium leading-relaxed text-foreground sm:text-editorial-body-lg">
+          {t("home.aiProofLead")}
+        </p>
+
+        <motion.div
+          className="mt-6 grid grid-cols-1 gap-4 sm:mt-7 sm:grid-cols-2 lg:grid-cols-4"
+          variants={listContainer(staggerLists)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-6% 0px" }}
+        >
+          {aiProofItems.map((item) => (
+            <motion.article
+              key={item.title}
+              variants={listItem}
+              className="rounded-lg border border-border/25 bg-card p-4 shadow-[0_10px_28px_rgb(var(--foreground)/0.04)] transition-colors duration-300 hover:border-primary/35 sm:p-5"
+            >
+              <h3 className="heading-subsection text-pretty text-[clamp(1.25rem,2.3vw,1.55rem)]">{item.title}</h3>
+              <p className="mt-3 text-editorial-sm leading-relaxed text-foreground sm:text-editorial-base">{item.text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="mt-5 grid grid-cols-2 gap-3 sm:mt-6 sm:grid-cols-3 lg:grid-cols-4"
+          variants={listContainer(staggerLists)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-6% 0px" }}
+        >
+          {certificateImages.map((item) => (
+            <motion.figure
+              key={item.src}
+              variants={listItem}
+              className="overflow-hidden rounded-lg border border-border/25 bg-card shadow-[0_8px_24px_rgb(var(--foreground)/0.04)]"
+            >
+              <div className="relative aspect-[4/3] w-full bg-muted-surface/35">
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                />
+              </div>
+              <figcaption className="px-3 py-2 text-[0.78rem] font-semibold leading-snug text-foreground sm:text-sm">{item.title}</figcaption>
+            </motion.figure>
+          ))}
+        </motion.div>
+      </motion.section>
+
+      {/* ── PROCESS ── */}
+      <motion.section className={`relative border-t border-border/20 pt-8 ${sectionGap}`} {...sectionMotion}>
+        <HeadingTextType as="h2" text={t("home.processTitle")} typingSpeed={78} className="heading-section" />
+        <p className="mt-4 max-w-3xl text-editorial-base font-medium leading-relaxed text-foreground sm:text-editorial-body-lg">
+          {t("home.processLead")}
+        </p>
+        <motion.div
+          className="mt-6 grid grid-cols-1 gap-4 sm:mt-7 sm:grid-cols-2 lg:grid-cols-4"
+          variants={listContainer(staggerLists)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-6% 0px" }}
+        >
+          {processSteps.map((step, index) => (
+            <motion.article
+              key={step.title}
+              variants={listItem}
+              className="flex min-h-[13rem] flex-col rounded-lg border border-border/25 bg-card p-4 shadow-[0_10px_28px_rgb(var(--foreground)/0.04)] sm:p-5"
+            >
+              <span className="text-editorial-base font-semibold text-primary">{String(index + 1).padStart(2, "0")}</span>
+              <h3 className="mt-5 heading-subsection text-pretty text-[clamp(1.2rem,2.2vw,1.5rem)]">{step.title}</h3>
+              <p className="mt-3 text-editorial-sm leading-relaxed text-foreground sm:text-editorial-base">{step.text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
       </motion.section>
 
       {/* ── FEATURED ── */}
@@ -278,17 +411,16 @@ export function HomeContent() {
           {t("home.finalBody")}
         </p>
         <div className="mt-6 flex max-w-xl flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center">
-          <ContactChoiceTrigger
+          <SiteIdeaTrigger
             className={`${primaryCtaClassNames("lg")} h-11 min-h-[2.75rem] w-full justify-center rounded-lg border-transparent px-7 text-editorial-sm sm:w-auto`}
+          >
+            {t("cta.siteIdea")}
+          </SiteIdeaTrigger>
+          <ContactChoiceTrigger
+            className={`${secondaryCtaClassNames("lg")} h-11 min-h-[2.75rem] w-full px-7 text-editorial-sm sm:w-auto`}
           >
             {t("cta.write")}
           </ContactChoiceTrigger>
-          <Link
-            href="/portfolio"
-            className={`${secondaryCtaClassNames("lg")} h-11 min-h-[2.75rem] w-full px-7 text-editorial-sm sm:w-auto`}
-          >
-            {t("cta.works")}
-          </Link>
         </div>
       </motion.section>
     </Container>
