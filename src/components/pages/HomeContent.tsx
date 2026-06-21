@@ -167,6 +167,9 @@ export function HomeContent() {
             <p className="max-w-[min(100%,34ch)] text-editorial-base font-medium leading-snug text-foreground sm:text-editorial-body-lg">
               {t("home.heroSubtitle")}
             </p>
+            <p className="max-w-[min(100%,40rem)] border-l-4 border-primary pl-5 text-editorial-sm font-medium leading-snug text-foreground sm:text-editorial-base">
+              {t("home.heroProof")}
+            </p>
             <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
               <Link
                 href="/portfolio"

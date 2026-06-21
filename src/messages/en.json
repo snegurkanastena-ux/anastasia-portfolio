@@ -21,7 +21,7 @@
     "telegram": "Message on Telegram",
     "contact": "Contact",
     "projects": "View projects",
-    "discuss": "Discuss a project",
+    "discuss": "Discuss the project",
     "pay": "Open payment form",
     "works": "See selected work",
     "write": "Contact me",
@@ -112,11 +112,12 @@
     "notFound": "Page not found"
   },
   "home": {
-    "heroTitle": "I build websites, interfaces, and digital projects that feel like a vibe — and work like a system",
-    "heroSubtitle": "Not just “ship some layout”, but shape feeling, style, logic, and presentation so the project feels worth opening, scrolling, and remembering.",
+    "heroTitle": "A website through an entrepreneur’s eyes, not a developer’s",
+    "heroSubtitle": "Modern websites for businesses and experts. No technical headache, with a clear process and support after launch.",
+    "heroProof": "15+ years in business, management, and sales. So I think not only about design, but about what your future client will see, understand, and feel.",
     "heroPortraitAlt": "Portrait of Anastasia Melnikova",
-    "aboutTitle": "I assemble the impression at the intersection of code, visuals, UX, and AI",
-    "aboutSubtitle": "For me, a website isn’t a stack of blocks. It’s the feeling of the project, rhythm, presentation, and how a person feels inside the interface. My approach is fast, beautiful, and intentional.",
+    "aboutTitle": "I connect websites, sales, visuals, and AI tools",
+    "aboutSubtitle": "I use modern AI tools for structure, content, visuals, and automation, but I do not build for the sake of technology. The goal is simple: help people understand the value, feel trust, and take the next step.",
     "whatTitle": "What I do",
     "what1Title": "Landing pages",
     "what1Text": "Sites that don’t merely “exist” — they capture attention, keep rhythm, and guide people through meaning.",
@@ -165,9 +166,9 @@
     "whyStack": "aesthetics + structure + digital thinking + speed",
     "audienceTitle": "Who my work fits",
     "audienceItems": "experts|creators|digital projects|AI products|studios|anyone who needs a site with character|anyone who refuses a bland template page",
-    "manifesto": "A good website isn’t when it’s “nicely coded”. It’s when the project gains energy, form, and a sense of being alive.",
-    "finalTitle": "If you need a site that looks strong and feels modern — let’s build it",
-    "finalBody": "I can help with concept, structure, packaging, and implementation — from the first vibe to a finished page."
+    "manifesto": "A good website is not just design and code. It is when a business looks professional, earns trust, and speaks to clients in clear language.",
+    "finalTitle": "Let’s define what website your business actually needs",
+    "finalBody": "I can help choose the format, shape the structure, package the message, and launch the site without technical headache."
   },
   "portfolioPage": {
     "title": "Real case studies: the brief, what shipped on the site, and the client outcome",
@@ -240,8 +241,8 @@
     "ctaCollapseDetails": "Collapse details"
   },
   "servicesPage": {
-    "title": "I build websites that bring leads — not just sit online",
-    "lead": "I choose the format for the task: from a compact business card site and promo page to a landing page, portfolio, multi-page website, online store, app, or growth work for an existing project.",
+    "title": "Websites shaped around the business goal, not just a pretty page",
+    "lead": "I look at the website through an entrepreneur’s eyes: what the client should understand, believe, and click next. Then I choose the right format — from a business card site and promo page to an online store, app, or growth work.",
     "priceLabel": "Starting price",
     "panelWhenLabel": "Fits if",
     "panelResultLabel": "What you get",

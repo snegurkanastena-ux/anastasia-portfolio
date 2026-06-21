@@ -26,8 +26,8 @@ const signature = Caveat({
 const siteUrl = "https://www.про-сайты.рф";
 const siteUrlAscii = "https://www.xn----8sb1aregjk5f.xn--p1ai";
 const siteDescription =
-  "Создание сайтов, лендингов, промо-страниц, портфолио, многостраничных сайтов, интернет-магазинов, интерфейсов и приложений.";
-const siteTitle = `${BRAND_DISPLAY_NAME_RU} — создание сайтов и лендингов`;
+  "Сайт глазами предпринимателя: создание сайтов, лендингов, промо-страниц, портфолио, интернет-магазинов и приложений для бизнеса и экспертов.";
+const siteTitle = `${BRAND_DISPLAY_NAME_RU} — сайты для бизнеса и экспертов`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrlAscii),
@@ -35,6 +35,8 @@ export const metadata: Metadata = {
   description: siteDescription,
   keywords: [
     "создание сайтов",
+    "сайт для бизнеса",
+    "сайт для эксперта",
     "сайт-визитка",
     "лендинг",
     "промо-страница",

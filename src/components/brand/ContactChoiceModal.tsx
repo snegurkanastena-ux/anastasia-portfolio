@@ -12,7 +12,7 @@ import {
 import { createPortal } from "react-dom";
 import { useLocale } from "@/contexts/LocaleContext";
 import { TELEGRAM_BOT_URL } from "@/lib/site";
-import { Button } from "@/components/ui/Button";
+import { Button, secondaryCtaClassNames } from "@/components/ui/Button";
 
 type SendState = "idle" | "loading" | "success" | "error";
 type FieldErrors = { name?: string; email?: string; message?: string };
@@ -240,7 +240,7 @@ export function ContactChoicePanel({
           target="_blank"
           rel="noopener noreferrer"
           onClick={onClose}
-          className="mt-2 inline-flex h-11 w-full items-center justify-center rounded-editorial-md border border-line/70 bg-transparent text-editorial-base font-semibold text-ink transition-[border-color,background-color,color] duration-editorial ease-editorial hover:border-line hover:bg-elevated/55 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent dark:hover:bg-elevated/22"
+          className={`${secondaryCtaClassNames("lg")} mt-2 h-11 w-full text-editorial-base`}
         >
           {t("contactDialog.telegram")}
         </a>
