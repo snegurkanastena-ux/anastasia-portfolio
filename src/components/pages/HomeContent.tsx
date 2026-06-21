@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useMemo } from "react";
 
 import { ContactChoiceTrigger } from "@/components/brand/ContactChoiceModal";
-import { primaryCtaClassNames } from "@/components/ui/Button";
+import { primaryCtaClassNames, secondaryCtaClassNames } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { HeadingTextType } from "@/components/ui/HeadingTextType";
 import { TextType } from "@/components/ui/TextType";
@@ -174,7 +174,7 @@ export function HomeContent() {
               >
                 {t("cta.projects")}
               </Link>
-              <ContactChoiceTrigger className="inline-flex h-11 min-h-[2.75rem] min-w-[10.5rem] items-center justify-center rounded-lg border border-border/20 bg-transparent px-7 text-editorial-sm font-semibold text-foreground transition-[border-color,opacity] duration-200 hover:border-border/35 hover:opacity-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+              <ContactChoiceTrigger className={`${secondaryCtaClassNames("lg")} h-11 min-h-[2.75rem] min-w-[10.5rem] px-7 text-editorial-sm`}>
                 {t("cta.discuss")}
               </ContactChoiceTrigger>
             </div>
@@ -282,7 +282,7 @@ export function HomeContent() {
           </ContactChoiceTrigger>
           <Link
             href="/portfolio"
-            className="inline-flex h-11 min-h-[2.75rem] w-full items-center justify-center rounded-lg border border-border/20 px-7 text-editorial-sm font-semibold text-[rgb(var(--heading))] transition-[border-color,opacity] duration-200 hover:border-border/35 hover:opacity-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-auto"
+            className={`${secondaryCtaClassNames("lg")} h-11 min-h-[2.75rem] w-full px-7 text-editorial-sm sm:w-auto`}
           >
             {t("cta.works")}
           </Link>

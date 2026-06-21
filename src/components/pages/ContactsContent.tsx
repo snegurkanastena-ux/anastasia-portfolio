@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ContactChoiceTrigger } from "@/components/brand/ContactChoiceModal";
-import { primaryCtaClassNames } from "@/components/ui/Button";
+import { primaryCtaClassNames, secondaryCtaClassNames } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { TextType } from "@/components/ui/TextType";
 import { useLocale } from "@/contexts/LocaleContext";
@@ -76,7 +76,7 @@ export function ContactsContent() {
           >
             {t("contactDialog.telegram")}
           </a>
-          <ContactChoiceTrigger className="inline-flex h-12 min-h-[3rem] flex-1 items-center justify-center rounded-lg border border-border/20 bg-transparent px-6 text-editorial-sm font-semibold text-foreground transition-[border-color,opacity] duration-200 hover:border-border/35 hover:opacity-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+          <ContactChoiceTrigger className={`${secondaryCtaClassNames("lg")} h-12 min-h-[3rem] flex-1 px-6 text-editorial-sm`}>
             {t("contactDialog.title")}
           </ContactChoiceTrigger>
         </div>

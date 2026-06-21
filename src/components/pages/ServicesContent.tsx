@@ -5,7 +5,7 @@ import Link from "next/link";
 import { SiteIdeaTrigger } from "@/components/brand/SiteIdeaModal";
 import { Container } from "@/components/ui/Container";
 import { HeadingTextType } from "@/components/ui/HeadingTextType";
-import { primaryCtaClassNames } from "@/components/ui/Button";
+import { primaryCtaClassNames, secondaryCtaClassNames } from "@/components/ui/Button";
 import { TextType } from "@/components/ui/TextType";
 import { useLocale } from "@/contexts/LocaleContext";
 import { transitionBase } from "@/lib/motion";
@@ -28,11 +28,12 @@ const listItem = {
 };
 
 const cardSurface =
-  "rounded-lg border border-border/20 bg-card p-5 transition-[border-color,opacity,transform,box-shadow] duration-300 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_6px_32px_rgb(var(--primary)/0.22),0_0_0_1px_rgb(var(--primary)/0.08)] sm:p-6";
+  "rounded-lg border border-border/20 bg-card/90 p-5 transition-[background-color,border-color,opacity,transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-primary/25 hover:bg-card hover:shadow-[0_10px_40px_rgb(var(--depth)/0.18)] sm:p-6";
 
-const labelBaseClass = "inline-flex rounded-sm px-1.5 py-0.5 text-editorial-label font-bold tracking-wide";
-const whenLabelClass = `${labelBaseClass} bg-primary/10 text-primary`;
-const resultLabelClass = `${labelBaseClass} border border-primary/35 bg-primary/5 text-primary`;
+const labelBaseClass =
+  "inline-flex w-fit items-center rounded-lg border border-[rgb(var(--foreground)/0.24)] bg-[rgb(var(--background)/0.55)] px-3 py-1.5 text-editorial-sm font-semibold leading-none text-[rgb(var(--heading))] shadow-[inset_0_0_0_1px_rgb(var(--rim)/0.55)]";
+const priceBadgeClass =
+  "inline-flex min-w-[8.5rem] flex-col items-end justify-center rounded-lg border border-transparent bg-primary px-3.5 py-2 text-primary-foreground shadow-sm shadow-black/10";
 
 export function ServicesContent() {
   const { t, locale } = useLocale();
@@ -40,12 +41,14 @@ export function ServicesContent() {
   const staggerLists = !reduceMotion;
 
   const items = [
-    { title: t("servicesPage.s1"), when: t("servicesPage.s1When"), result: t("servicesPage.s1Result") },
-    { title: t("servicesPage.s2"), when: t("servicesPage.s2When"), result: t("servicesPage.s2Result") },
-    { title: t("servicesPage.s3"), when: t("servicesPage.s3When"), result: t("servicesPage.s3Result") },
-    { title: t("servicesPage.s4"), when: t("servicesPage.s4When"), result: t("servicesPage.s4Result") },
-    { title: t("servicesPage.s5"), when: t("servicesPage.s5When"), result: t("servicesPage.s5Result") },
-    { title: t("servicesPage.s6"), when: t("servicesPage.s6When"), result: t("servicesPage.s6Result") },
+    { title: t("servicesPage.s1"), price: t("servicesPage.s1Price"), when: t("servicesPage.s1When"), result: t("servicesPage.s1Result") },
+    { title: t("servicesPage.s2"), price: t("servicesPage.s2Price"), when: t("servicesPage.s2When"), result: t("servicesPage.s2Result") },
+    { title: t("servicesPage.s3"), price: t("servicesPage.s3Price"), when: t("servicesPage.s3When"), result: t("servicesPage.s3Result") },
+    { title: t("servicesPage.s4"), price: t("servicesPage.s4Price"), when: t("servicesPage.s4When"), result: t("servicesPage.s4Result") },
+    { title: t("servicesPage.s5"), price: t("servicesPage.s5Price"), when: t("servicesPage.s5When"), result: t("servicesPage.s5Result") },
+    { title: t("servicesPage.s6"), price: t("servicesPage.s6Price"), when: t("servicesPage.s6When"), result: t("servicesPage.s6Result") },
+    { title: t("servicesPage.s7"), price: t("servicesPage.s7Price"), when: t("servicesPage.s7When"), result: t("servicesPage.s7Result") },
+    { title: t("servicesPage.s8"), price: t("servicesPage.s8Price"), when: t("servicesPage.s8When"), result: t("servicesPage.s8Result") },
   ];
 
   const processSteps = [
@@ -95,21 +98,34 @@ export function ServicesContent() {
       >
         {items.map((item, i) => (
           <motion.article key={item.title} variants={listItem} className={`flex flex-col ${cardSurface}`}>
-            <span className="font-display text-editorial-display-sm text-muted">{String(i + 1).padStart(2, "0")}</span>
-            <h2 className="heading-subsection mt-4">{item.title}</h2>
-            <div className="mt-4 flex flex-1 flex-col gap-3.5 pt-1">
+            <div className="flex items-start justify-between gap-5">
+              <span className="font-display text-editorial-display-sm leading-none text-muted">{String(i + 1).padStart(2, "0")}</span>
+              <div className={priceBadgeClass}>
+                <p className="text-editorial-label font-semibold opacity-85">{t("servicesPage.priceLabel")}</p>
+                <p className="mt-1 font-display text-[1.28rem] leading-none sm:text-[1.45rem]">{item.price}</p>
+              </div>
+            </div>
+            <h2 className="heading-subsection mt-6">{item.title}</h2>
+            <div className="mt-5 flex flex-1 flex-col gap-4 border-t border-border/15 pt-5">
               <div>
-                <p className={whenLabelClass}>{t("servicesPage.panelWhenLabel")}</p>
+                <p className={labelBaseClass}>{t("servicesPage.panelWhenLabel")}</p>
                 <p className="mt-1.5 text-editorial-sm font-medium leading-snug text-foreground sm:text-editorial-base">{item.when}</p>
               </div>
               <div>
-                <p className={resultLabelClass}>{t("servicesPage.panelResultLabel")}</p>
+                <p className={labelBaseClass}>{t("servicesPage.panelResultLabel")}</p>
                 <p className="mt-1.5 text-editorial-sm font-medium leading-snug text-foreground sm:text-editorial-base">{item.result}</p>
               </div>
             </div>
           </motion.article>
         ))}
       </motion.div>
+
+      <motion.p
+        className="mt-5 max-w-3xl text-editorial-sm font-medium leading-snug text-muted sm:text-editorial-base"
+        {...sectionMotion}
+      >
+        {t("servicesPage.pricingNote")}
+      </motion.p>
 
       <motion.section className="mt-10 sm:mt-12" {...sectionMotion}>
         <HeadingTextType as="h2" text={t("servicesPage.processTitle")} typingSpeed={88} className="heading-section max-w-[18ch]" />
@@ -151,7 +167,7 @@ export function ServicesContent() {
           <SiteIdeaTrigger className={`${primaryCtaClassNames("lg")} min-w-[12rem]`}>{t("servicesPage.ctaButton")}</SiteIdeaTrigger>
           <Link
             href="/portfolio"
-            className="inline-flex h-11 min-w-[10rem] items-center justify-center rounded-lg border border-border/20 px-6 text-editorial-sm font-semibold text-[rgb(var(--heading))] transition-[border-color,opacity] duration-200 hover:border-border/35 hover:opacity-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            className={`${secondaryCtaClassNames("lg")} h-11 min-w-[10rem] px-6 text-editorial-sm`}
           >
             {t("cta.works")}
           </Link>
