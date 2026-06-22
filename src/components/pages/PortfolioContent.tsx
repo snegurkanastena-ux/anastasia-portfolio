@@ -188,7 +188,10 @@ export function PortfolioContent() {
                         <p className={labelClass}>{t("portfolioPage.panelEffectLabel")}</p>
                         <p className={blockClass}>{c.result}</p>
                       </div>
-                      <p className="border-t border-border/15 pt-3 text-editorial-caption font-medium leading-snug text-muted">{c.trust}</p>
+                      <div className="rounded-lg border border-primary/25 bg-primary/8 p-3">
+                        <p className="text-editorial-label font-semibold tracking-wide text-primary">{t("portfolioPage.panelTrustLabel")}</p>
+                        <p className="mt-1.5 text-editorial-sm font-medium leading-snug text-foreground">{c.trust}</p>
+                      </div>
                       {"screenshots" in project ? (
                         <div className="grid grid-cols-2 gap-3">
                           {project.screenshots.map((src, index) => (

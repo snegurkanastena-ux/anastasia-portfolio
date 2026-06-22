@@ -185,6 +185,25 @@ export function HomeContent() {
     },
   ];
 
+  const trustItems = [
+    {
+      title: t("home.trustBusinessTitle"),
+      text: t("home.trustBusinessText"),
+    },
+    {
+      title: t("home.trustAiTitle"),
+      text: t("home.trustAiText"),
+    },
+    {
+      title: t("home.trustLaunchTitle"),
+      text: t("home.trustLaunchText"),
+    },
+    {
+      title: t("home.trustSupportTitle"),
+      text: t("home.trustSupportText"),
+    },
+  ];
+
   const heroTitle = reduceMotion ? (
     <h1 className="heading-hero max-w-[min(100%,30ch)]" aria-label={t("home.heroTitle")}>{t("home.heroTitle")}</h1>
   ) : (
@@ -255,6 +274,32 @@ export function HomeContent() {
             {t("cta.viewServices")}
           </Link>
         </div>
+      </motion.section>
+
+      {/* ── TRUST ── */}
+      <motion.section className={`relative border-t border-border/20 pt-8 ${sectionGap}`} {...sectionMotion}>
+        <HeadingTextType as="h2" text={t("home.trustTitle")} typingSpeed={78} className="heading-section" />
+        <p className="mt-4 max-w-3xl text-editorial-base font-medium leading-relaxed text-foreground sm:text-editorial-body-lg">
+          {t("home.trustLead")}
+        </p>
+        <motion.div
+          className="mt-6 grid grid-cols-1 gap-4 sm:mt-7 sm:grid-cols-2 lg:grid-cols-4"
+          variants={listContainer(staggerLists)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-6% 0px" }}
+        >
+          {trustItems.map((item) => (
+            <motion.article
+              key={item.title}
+              variants={listItem}
+              className="rounded-lg border border-border/25 bg-card p-4 shadow-[0_10px_28px_rgb(var(--foreground)/0.04)] sm:p-5"
+            >
+              <h3 className="heading-subsection text-pretty text-[clamp(1.18rem,2.1vw,1.45rem)]">{item.title}</h3>
+              <p className="mt-3 text-editorial-sm leading-relaxed text-foreground sm:text-editorial-base">{item.text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
       </motion.section>
 
       {/* ── AI PROOF ── */}
