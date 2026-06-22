@@ -210,13 +210,13 @@
     "finalBody": "I can help choose the format, shape the structure, package the message, and launch the site without technical headache."
   },
   "portfolioPage": {
-    "title": "Real case studies: the brief, what shipped on the site, and the client outcome",
-    "lead": "Not a screenshot gallery: each project shows the client goal, what was built on the site, what outcome it creates, and why this approach helps a business, expert, or launch look clearer.",
+    "title": "Projects that help businesses look stronger",
+    "lead": "I show more than website pictures: what the client came with, how the page was shaped, and why the next step became clearer after launch.",
     "panelTaskLabel": "Goal",
     "panelDoneLabel": "What we built",
-    "panelEffectLabel": "Outcome",
-    "panelTrustLabel": "Why it matters",
-    "ctaViewProject": "View the project",
+    "panelEffectLabel": "What the client got",
+    "panelTrustLabel": "Why this matters",
+    "ctaViewProject": "View the case",
     "ctaInProgress": "Project in progress",
     "melanomusicTitle": "Melano Music",
     "melanomusicIntro": "A site for an AI musician and songwriter: from first impression to track listening and request submission.",

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { PortfolioContent } from "@/components/pages/PortfolioContent";
 
-const title = "Портфолио сайтов, лендингов, приложений и AI-first проектов";
+const title = "Проекты сайтов, лендингов, приложений и AI-first решений";
 const description =
-  "Кейсы Анастасии Мельниковой: сайты для бизнеса и экспертов, лендинги, промо-страницы, портфолио, приложения и AI-first digital-проекты.";
+  "Проекты Анастасии Мельниковой: сайты для бизнеса и экспертов, лендинги, промо-страницы, портфолио, приложения и AI-first решения с понятным путём к заявке.";
 
 export const metadata: Metadata = {
   title,
