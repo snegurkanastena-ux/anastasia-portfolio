@@ -49,6 +49,7 @@ export function ServicesContent() {
     { title: t("servicesPage.s6"), price: t("servicesPage.s6Price"), when: t("servicesPage.s6When"), result: t("servicesPage.s6Result") },
     { title: t("servicesPage.s7"), price: t("servicesPage.s7Price"), when: t("servicesPage.s7When"), result: t("servicesPage.s7Result") },
     { title: t("servicesPage.s8"), price: t("servicesPage.s8Price"), when: t("servicesPage.s8When"), result: t("servicesPage.s8Result") },
+    { title: t("servicesPage.s9"), price: t("servicesPage.s9Price"), when: t("servicesPage.s9When"), result: t("servicesPage.s9Result") },
   ];
 
   const processSteps = [

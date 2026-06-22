@@ -321,7 +321,11 @@
     "s8": "Support & Growth",
     "s8Price": "from 5,000 ₽/mo.",
     "s8When": "The site already works, but needs updates, new blocks, edits, analytics, or growth",
-    "s8Result": "I keep the site alive after launch: improvements, form checks, updates, and new ideas"
+    "s8Result": "I keep the site alive after launch: improvements, form checks, updates, and new ideas",
+    "s9": "SEO Start / Search Setup",
+    "s9Price": "from 10,000 ₽",
+    "s9When": "The site is ready or nearly ready, but needs to be prepared for indexing and clearer search visibility",
+    "s9Result": "Title, description, sitemap, robots, basic keywords, Yandex Webmaster, Google Search Console, and copy recommendations"
   },
   "contactsPage": {
     "title": "Tell me what you’re building — we’ll shape it together",
