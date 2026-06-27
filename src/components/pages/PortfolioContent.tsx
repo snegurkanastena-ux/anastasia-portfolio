@@ -97,6 +97,14 @@ export function PortfolioContent() {
           result: t("portfolioPage.t2academyResult"),
           trust: t("portfolioPage.t2academyTrust"),
         },
+        prosites: {
+          title: t("portfolioPage.prositesTitle"),
+          intro: t("portfolioPage.prositesIntro"),
+          task: t("portfolioPage.prositesTask"),
+          done: t("portfolioPage.prositesDone"),
+          result: t("portfolioPage.prositesResult"),
+          trust: t("portfolioPage.prositesTrust"),
+        },
         taskplanner: {
           title: t("portfolioPage.taskplannerTitle"),
           intro: t("portfolioPage.taskplannerIntro"),
