@@ -252,8 +252,8 @@
     "taskplannerIntro": "A published Android app for tasks, calendar, notes, voice input, reminders, and a home-screen widget.",
     "taskplannerTask": "The goal was to build a planner that can be installed and used on a phone: create tasks by voice or manually, see calendar, notes, repeats, reminders, and daily summaries.",
     "taskplannerDone": "Built an Android app with tasks, calendar, notes, voice input, recurring tasks, calendar widget, widget themes, reminders, local password protection, and separate builds for team and personal use.",
-    "taskplannerResult": "The app passed RuStore review and is published. It is no longer just a demo screen, but an installable product that can be tested on Android and developed further into a server-based team version.",
-    "taskplannerTrust": "Shows the full path from idea to publication: APK builds, variants for different scenarios, widget, Android permissions, RuStore moderation, and preparation for team sync.",
+    "taskplannerResult": "The planner passed RuStore checks and moderation, is published in the store, and is available for download. It is no longer just a demo screen, but an installable Android product.",
+    "taskplannerTrust": "Shows the full path from idea to publication: APK builds, widget, Android permissions, RuStore checks, moderation, and preparation for team sync.",
     "reportappTitle": "Desktop reporting app",
     "reportappIntro": "A practical desktop tool for reports: less manual routine, clearer structure, and a repeatable result.",
     "reportappTask": "The task was to remove chaos from report preparation: stop collecting data manually every time and guide the user through a clear workflow.",
@@ -284,7 +284,8 @@
     "prositesTask": "Build a clear personal-brand website: show what I do, what projects I create, how the process works, and where a visitor should click to discuss a task.",
     "prositesDone": "Built the homepage, portfolio, services, contacts, site idea modal, legal documents, mobile adaptation, SEO metadata, and connected the pro-sites.rf domain through Vercel.",
     "prositesResult": "The site works as a single entry point: visitors see the work level, understand service formats, and can quickly move to a request or messenger.",
-    "prositesTrust": "Shows not only design, but launch work: domain, DNS, publishing, copy, structure, trust, and a clear request path."
+    "prositesTrust": "Shows not only design, but launch work: domain, DNS, publishing, copy, structure, trust, and a clear request path.",
+    "ctaOpenRuStore": "Download on RuStore"
   },
   "servicesPage": {
     "title": "Websites shaped around the business goal, not just a pretty page",

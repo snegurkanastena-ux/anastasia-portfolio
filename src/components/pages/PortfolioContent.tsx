@@ -97,14 +97,6 @@ export function PortfolioContent() {
           result: t("portfolioPage.t2academyResult"),
           trust: t("portfolioPage.t2academyTrust"),
         },
-        prosites: {
-          title: t("portfolioPage.prositesTitle"),
-          intro: t("portfolioPage.prositesIntro"),
-          task: t("portfolioPage.prositesTask"),
-          done: t("portfolioPage.prositesDone"),
-          result: t("portfolioPage.prositesResult"),
-          trust: t("portfolioPage.prositesTrust"),
-        },
         taskplanner: {
           title: t("portfolioPage.taskplannerTitle"),
           intro: t("portfolioPage.taskplannerIntro"),
@@ -227,7 +219,7 @@ export function PortfolioContent() {
                           rel="noopener noreferrer"
                           className="inline-flex h-10 w-full items-center justify-center rounded-lg border border-primary/35 bg-primary/8 px-5 text-sm font-semibold text-primary transition-colors duration-200 hover:border-primary hover:bg-primary/12 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                         >
-                          {t("portfolioPage.ctaOpenProject")}
+                          {project.id === "taskplanner" ? t("portfolioPage.ctaOpenRuStore") : t("portfolioPage.ctaOpenProject")}
                         </a>
                       ) : null}
                     </div>

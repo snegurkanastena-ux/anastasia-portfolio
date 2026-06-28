@@ -65,13 +65,8 @@ export const PROJECT_CASES = [
       "https://api.microlink.io/?url=https%3A%2F%2Fsnegurkanastena-ux.github.io%2Ft2-sales-training-platform%2F%23top&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&viewport.deviceScaleFactor=1",
   },
   {
-    id: "prosites",
-    href: "https://www.xn----8sb1aregjk5f.xn--p1ai/",
-    coverSrc:
-      "https://api.microlink.io/?url=https%3A%2F%2Fwww.xn----8sb1aregjk5f.xn--p1ai%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&viewport.deviceScaleFactor=1",
-  },
-  {
     id: "taskplanner",
+    href: "https://www.rustore.ru/catalog/app/com.employee.taskmanager.personal",
     coverSrc: "/images/projects/taskplanner.svg",
     screenshots: ["/images/projects/android-tasks-home.jpg", "/images/projects/android-tasks-calendar.jpg"],
   },
