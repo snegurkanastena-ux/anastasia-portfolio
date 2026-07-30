@@ -260,7 +260,7 @@ export function PortfolioContent() {
                     type="button"
                     onClick={() => setOpenProject(isOpen ? null : project.id)}
                     aria-expanded={isOpen}
-                    className="mt-4 inline-flex h-10 w-full items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    className="mt-auto inline-flex h-10 w-full items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     {isOpen ? t("portfolioPage.ctaCollapseDetails") : t("portfolioPage.ctaViewProject")}
                   </button>
