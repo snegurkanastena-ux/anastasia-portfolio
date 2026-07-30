@@ -1,0 +1,15 @@
+<svg width="1280" height="960" viewBox="0 0 1280 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="960" fill="#111111"/>
+  <rect x="96" y="90" width="1088" height="780" rx="30" fill="#F6F3EA"/>
+  <rect x="158" y="154" width="414" height="122" rx="24" fill="#2F745E"/>
+  <text x="192" y="229" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#FFFFFF">OpenClaw</text>
+  <text x="158" y="394" font-family="Arial, sans-serif" font-size="82" font-weight="700" fill="#111111">бот Кузя</text>
+  <text x="162" y="466" font-family="Arial, sans-serif" font-size="34" font-weight="600" fill="#2F745E">Telegram-помощник с характером</text>
+  <rect x="162" y="566" width="494" height="96" rx="22" fill="#111111"/>
+  <text x="198" y="626" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">роль · память · команды</text>
+  <rect x="722" y="250" width="350" height="420" rx="44" fill="#2F745E"/>
+  <circle cx="830" cy="410" r="32" fill="#F6F3EA"/>
+  <circle cx="964" cy="410" r="32" fill="#F6F3EA"/>
+  <path d="M824 534c42 34 108 34 150 0" stroke="#F6F3EA" stroke-width="16" stroke-linecap="round"/>
+  <path d="M780 250l-54-82M1014 250l54-82" stroke="#2F745E" stroke-width="22" stroke-linecap="round"/>
+</svg>

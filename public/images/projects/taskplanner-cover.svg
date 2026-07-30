@@ -1,0 +1,91 @@
+<svg width="1280" height="960" viewBox="0 0 1280 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="80" x2="1220" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#060916"/>
+      <stop offset=".45" stop-color="#121631"/>
+      <stop offset="1" stop-color="#031D21"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="280" y1="220" x2="980" y2="790" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFB84D"/>
+      <stop offset=".42" stop-color="#7C5CFF"/>
+      <stop offset="1" stop-color="#1DD7C1"/>
+    </linearGradient>
+    <linearGradient id="card" x1="148" y1="155" x2="1125" y2="807" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".97"/>
+      <stop offset="1" stop-color="#EEF7F4"/>
+    </linearGradient>
+    <filter id="shadow" x="90" y="80" width="1100" height="820" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="32" stdDeviation="34" flood-color="#000000" flood-opacity=".42"/>
+    </filter>
+    <filter id="soft" x="-40" y="-40" width="1360" height="1040" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="46"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="960" fill="url(#bg)"/>
+  <g filter="url(#soft)" opacity=".62">
+    <circle cx="930" cy="205" r="210" fill="#7C5CFF"/>
+    <circle cx="310" cy="760" r="220" fill="#18C7B6"/>
+    <circle cx="570" cy="300" r="150" fill="#FFB84D"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="132" y="118" width="1016" height="724" rx="56" fill="#081216" stroke="#263D42" stroke-width="2"/>
+    <rect x="160" y="148" width="960" height="664" rx="40" fill="url(#card)"/>
+
+    <g transform="translate(205 205)">
+      <rect width="270" height="500" rx="42" fill="#111827"/>
+      <rect x="22" y="22" width="226" height="456" rx="28" fill="#F8FAFF"/>
+      <rect x="48" y="56" width="82" height="18" rx="9" fill="#151B2D"/>
+      <rect x="48" y="102" width="150" height="16" rx="8" fill="#38B27C"/>
+      <rect x="48" y="142" width="168" height="16" rx="8" fill="#DDE7E4"/>
+      <rect x="48" y="182" width="132" height="16" rx="8" fill="#DDE7E4"/>
+      <rect x="48" y="244" width="56" height="56" rx="18" fill="#38B27C"/>
+      <path d="M64 273h24M76 261v24" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <rect x="128" y="244" width="56" height="56" rx="18" fill="#FFE9BD"/>
+      <circle cx="156" cy="272" r="11" fill="#D06D3B"/>
+      <rect x="48" y="346" width="168" height="14" rx="7" fill="#111827"/>
+      <rect x="48" y="380" width="124" height="14" rx="7" fill="#DDE7E4"/>
+    </g>
+
+    <g transform="translate(520 210)">
+      <rect x="0" y="0" width="510" height="220" rx="28" fill="#101827"/>
+      <text x="32" y="54" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Планер задач</text>
+      <text x="32" y="92" fill="#A9B7C3" font-family="Arial, sans-serif" font-size="18">задачи, календарь, заметки и виджет</text>
+      <rect x="32" y="126" width="150" height="44" rx="16" fill="#38B27C"/>
+      <text x="58" y="154" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="17" font-weight="700">RuStore</text>
+      <rect x="198" y="126" width="186" height="44" rx="16" fill="#232D44"/>
+      <text x="224" y="154" fill="#DCE7EA" font-family="Arial, sans-serif" font-size="17" font-weight="700">прошёл проверку</text>
+      <circle cx="438" cy="148" r="22" fill="#18C7B6"/>
+      <path d="M427 148l8 8 16-19" stroke="#081216" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <g transform="translate(520 480)">
+      <rect x="0" y="0" width="510" height="188" rx="28" fill="#F7FBFA" stroke="#D8E4E1"/>
+      <rect x="30" y="30" width="92" height="92" rx="28" fill="url(#glow)"/>
+      <path d="M55 78l17 17 38-43" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="152" y="35" width="260" height="18" rx="9" fill="#111827"/>
+      <rect x="152" y="76" width="310" height="16" rx="8" fill="#C8D8D5"/>
+      <rect x="152" y="114" width="224" height="16" rx="8" fill="#DCE8E5"/>
+      <g transform="translate(32 142)">
+        <rect width="70" height="28" rx="14" fill="#FFF2CE"/>
+        <rect x="84" width="70" height="28" rx="14" fill="#E9E3FF"/>
+        <rect x="168" width="70" height="28" rx="14" fill="#DAF6EF"/>
+        <rect x="252" width="70" height="28" rx="14" fill="#FFE1D6"/>
+      </g>
+    </g>
+
+    <g transform="translate(780 376)">
+      <rect width="250" height="62" rx="22" fill="#101827"/>
+      <circle cx="42" cy="31" r="12" fill="#FFB84D"/>
+      <circle cx="82" cy="31" r="12" fill="#18C7B6"/>
+      <circle cx="122" cy="31" r="12" fill="#7C5CFF"/>
+      <rect x="156" y="22" width="58" height="18" rx="9" fill="#DCE8E5"/>
+    </g>
+
+    <g transform="translate(705 690)">
+      <text x="0" y="0" fill="#101827" font-family="Arial, sans-serif" font-size="24" font-weight="700">Опубликовано в RuStore</text>
+      <text x="0" y="34" fill="#52636B" font-family="Arial, sans-serif" font-size="18">можно скачать и тестировать</text>
+    </g>
+  </g>
+</svg>

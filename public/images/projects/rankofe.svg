@@ -1,0 +1,14 @@
+<svg width="1280" height="960" viewBox="0 0 1280 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="960" fill="#101010"/>
+  <rect x="92" y="88" width="1096" height="784" rx="34" fill="#F7F5EF"/>
+  <text x="152" y="250" font-family="Arial, sans-serif" font-size="92" font-weight="700" fill="#111111">Rankofe</text>
+  <text x="156" y="314" font-family="Arial, sans-serif" font-size="38" font-weight="600" fill="#2F745E">приложение · клуб · кофейня</text>
+  <rect x="152" y="430" width="408" height="106" rx="24" fill="#2F745E"/>
+  <text x="188" y="496" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">гость возвращается</text>
+  <rect x="686" y="190" width="330" height="570" rx="46" fill="#111111"/>
+  <rect x="724" y="246" width="254" height="106" rx="22" fill="#F7F5EF"/>
+  <text x="758" y="313" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#2F745E">Клуб</text>
+  <circle cx="852" cy="504" r="96" fill="#2F745E"/>
+  <path d="M810 500h84M852 458v84" stroke="#F7F5EF" stroke-width="16" stroke-linecap="round"/>
+  <rect x="744" y="652" width="216" height="38" rx="19" fill="#F7F5EF"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg width="1280" height="960" viewBox="0 0 1280 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="960" fill="#0F1110"/>
+  <rect x="86" y="78" width="1108" height="804" rx="34" fill="#F7F5EF"/>
+  <circle cx="198" cy="190" r="44" fill="#2F745E"/>
+  <path d="M198 162v56M170 190h56" stroke="#F7F5EF" stroke-width="14" stroke-linecap="round"/>
+  <text x="150" y="330" font-family="Arial, sans-serif" font-size="68" font-weight="700" fill="#101010">ИИ-коуч по</text>
+  <text x="150" y="414" font-family="Arial, sans-serif" font-size="68" font-weight="700" fill="#101010">трансформации</text>
+  <text x="150" y="510" font-family="Arial, sans-serif" font-size="34" font-weight="600" fill="#2F745E">цель -> состояние -> действие</text>
+  <rect x="150" y="604" width="980" height="104" rx="22" fill="#2F745E"/>
+  <text x="194" y="670" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">бережный AI-сценарий для личных изменений</text>
+  <path d="M858 210c96 42 158 128 158 226 0 152-148 276-330 276" stroke="#2F745E" stroke-width="18" stroke-linecap="round" stroke-dasharray="34 28"/>
+  <circle cx="686" cy="712" r="18" fill="#2F745E"/>
+</svg>

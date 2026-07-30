@@ -1,0 +1,13 @@
+<svg width="1280" height="960" viewBox="0 0 1280 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="960" fill="#101010"/>
+  <rect x="86" y="78" width="1108" height="804" rx="34" fill="#F7F5EF"/>
+  <text x="150" y="258" font-family="Arial, sans-serif" font-size="78" font-weight="700" fill="#111111">Стикеры</text>
+  <text x="150" y="344" font-family="Arial, sans-serif" font-size="78" font-weight="700" fill="#111111">для бизнеса</text>
+  <text x="154" y="426" font-family="Arial, sans-serif" font-size="34" font-weight="600" fill="#2F745E">MAX · Telegram · Битрикс</text>
+  <rect x="154" y="548" width="300" height="96" rx="24" fill="#2F745E"/>
+  <text x="194" y="610" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#FFFFFF">от 2 000 ₽</text>
+  <rect x="720" y="202" width="176" height="176" rx="38" fill="#2F745E"/>
+  <rect x="918" y="314" width="176" height="176" rx="38" fill="#111111"/>
+  <rect x="760" y="532" width="176" height="176" rx="38" fill="#2F745E"/>
+  <path d="M770 290h76M808 252v76M966 402h80M808 620h80" stroke="#F7F5EF" stroke-width="18" stroke-linecap="round"/>
+</svg>
