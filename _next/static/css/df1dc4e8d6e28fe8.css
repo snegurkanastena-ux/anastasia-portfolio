@@ -1,0 +1,1 @@
+.text-type{display:inline;white-space:pre-wrap}.text-type__content{color:inherit}.text-type__cursor{margin-left:.15em;display:inline-block;font-weight:600;animation-name:text-type-cursor-blink;animation-timing-function:step-end;animation-iteration-count:infinite}.text-type__cursor--hidden{visibility:hidden}@keyframes text-type-cursor-blink{0%,49%{opacity:1}50%,to{opacity:0}}
