@@ -50,7 +50,11 @@ export const PROJECT_CASES = [
     id: "runcoffee",
     href: "https://snegurkanastena-ux.github.io/run-coffee-demo/",
     coverSrc: "/images/projects/runcoffee-club-cover.png",
-    screenshots: ["/images/projects/runcoffee-club-dashboard.png", "/images/projects/runcoffee-club-payment.png"],
+    screenshots: [
+      "/images/projects/runcoffee-app-content.png",
+      "/images/projects/runcoffee-club-dashboard.png",
+      "/images/projects/runcoffee-club-payment.png",
+    ],
   },
   {
     id: "rada",
@@ -66,7 +70,7 @@ export const PROJECT_CASES = [
   },
   {
     id: "transformationCoach",
-    coverSrc: "/images/projects/transformation-coach.svg",
+    coverSrc: "/images/projects/transformation-coach-content.png",
   },
   {
     id: "openclawKuzya",
