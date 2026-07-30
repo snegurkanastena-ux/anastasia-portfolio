@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Container } from "@/components/ui/Container";
 import { TextType } from "@/components/ui/TextType";
@@ -167,6 +167,24 @@ export function PortfolioContent() {
   const blockClass = "mt-1.5 text-editorial-sm font-medium leading-snug text-foreground sm:text-editorial-base sm:leading-snug";
   const closeLabel = locale === "ru" ? "Закрыть" : "Close";
 
+  useEffect(() => {
+    if (!openProject) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenProject(null);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [openProject]);
+
   return (
     <div className="relative min-h-full overflow-x-hidden pb-section-lg pt-section-sm sm:pt-section-md">
       <Container className="relative z-10">
@@ -215,84 +233,95 @@ export function PortfolioContent() {
 
         {selectedProject && selectedCopy ? (
           <div
-            className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-background/88 px-4 py-6 backdrop-blur-xl sm:py-10"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-background/92 px-3 py-4 backdrop-blur-xl sm:px-5 sm:py-7"
             role="dialog"
             aria-modal="true"
             aria-labelledby="portfolio-case-title"
+            onMouseDown={(event) => {
+              if (event.target === event.currentTarget) {
+                setOpenProject(null);
+              }
+            }}
           >
-            <div className="relative w-full max-w-5xl rounded-lg border border-border/25 bg-card shadow-[0_24px_80px_rgb(var(--foreground)/0.22)]">
-              <button
-                type="button"
-                onClick={() => setOpenProject(null)}
-                className="absolute right-3 top-3 z-10 inline-flex h-9 min-w-9 items-center justify-center rounded-lg border border-border/25 bg-background/80 px-3 text-sm font-semibold text-foreground backdrop-blur transition-colors duration-200 hover:bg-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              >
-                {closeLabel}
-              </button>
-              <div className="grid gap-6 p-4 sm:p-6 lg:grid-cols-[0.95fr_1.05fr] lg:p-7">
+            <div className="relative flex max-h-[calc(100dvh-2rem)] w-full max-w-6xl flex-col overflow-hidden rounded-lg border border-border/25 bg-card shadow-[0_24px_90px_rgb(var(--foreground)/0.28)] sm:max-h-[calc(100dvh-3.5rem)]">
+              <div className="sticky top-0 z-20 flex items-start justify-between gap-4 border-b border-border/20 bg-card/95 px-4 py-3 backdrop-blur sm:px-6">
                 <div className="min-w-0">
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border/20 bg-muted-surface/40">
-                    <Image
-                      src={selectedProject.coverSrc}
-                      alt={selectedCopy.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 44vw"
-                    />
-                  </div>
-                  {"screenshots" in selectedProject ? (
-                    <div className="mt-4 flex snap-x gap-4 overflow-x-auto pb-3">
-                      {selectedProject.screenshots.map((src, index) => (
-                        <figure key={src} className="min-w-[min(86vw,520px)] snap-start">
-                          <div className="relative h-[min(72vh,620px)] overflow-hidden rounded-lg border border-border/20 bg-muted-surface/40 shadow-[0_14px_32px_rgb(var(--foreground)/0.12)]">
-                            <Image
-                              src={src}
-                              alt={selectedProject.id === "taskplanner" ? t(index === 0 ? "portfolioPage.taskplannerScreenshotHomeAlt" : "portfolioPage.taskplannerScreenshotCalendarAlt") : `${selectedCopy.title}: screen ${index + 1}`}
-                              fill
-                              className="object-contain"
-                              sizes="(max-width: 640px) 86vw, 520px"
-                            />
-                          </div>
-                          {selectedProject.id === "taskplanner" ? (
-                            <figcaption className="mt-2 text-editorial-caption font-medium leading-tight text-muted">
-                              {t(index === 0 ? "portfolioPage.taskplannerScreenshotHomeCaption" : "portfolioPage.taskplannerScreenshotCalendarCaption")}
-                            </figcaption>
-                          ) : null}
-                        </figure>
-                      ))}
-                    </div>
-                  ) : null}
+                  <p className="text-editorial-label font-semibold tracking-wide text-primary">{t("portfolioPage.ctaViewProject")}</p>
+                  <h2 id="portfolio-case-title" className="heading-subsection mt-1 text-pretty">{selectedCopy.title}</h2>
                 </div>
-                <div className="flex min-w-0 flex-col gap-4">
-                  <div className="pr-20">
-                    <h2 id="portfolio-case-title" className="heading-subsection text-pretty">{selectedCopy.title}</h2>
-                    <p className="mt-2 text-editorial-base leading-snug text-muted">{selectedCopy.intro}</p>
+                <button
+                  type="button"
+                  onClick={() => setOpenProject(null)}
+                  aria-label={closeLabel}
+                  className="inline-flex h-10 shrink-0 items-center justify-center rounded-lg border border-border/25 bg-background/80 px-4 text-sm font-semibold text-foreground backdrop-blur transition-colors duration-200 hover:bg-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                >
+                  {closeLabel}
+                </button>
+              </div>
+              <div className="min-h-0 overflow-y-auto">
+                <div className="grid gap-6 p-4 sm:p-6 lg:grid-cols-[0.9fr_1.1fr] lg:p-7">
+                  <div className="min-w-0">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border/20 bg-muted-surface/40">
+                      <Image
+                        src={selectedProject.coverSrc}
+                        alt={selectedCopy.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 44vw"
+                      />
+                    </div>
+                    {"screenshots" in selectedProject ? (
+                      <div className="mt-4 flex snap-x gap-4 overflow-x-auto pb-3">
+                        {selectedProject.screenshots.map((src, index) => (
+                          <figure key={src} className="min-w-[min(86vw,520px)] snap-start">
+                            <div className="relative h-[min(72vh,620px)] overflow-hidden rounded-lg border border-border/20 bg-muted-surface/40 shadow-[0_14px_32px_rgb(var(--foreground)/0.12)]">
+                              <Image
+                                src={src}
+                                alt={selectedProject.id === "taskplanner" ? t(index === 0 ? "portfolioPage.taskplannerScreenshotHomeAlt" : "portfolioPage.taskplannerScreenshotCalendarAlt") : `${selectedCopy.title}: screen ${index + 1}`}
+                                fill
+                                className="object-contain"
+                                sizes="(max-width: 640px) 86vw, 520px"
+                              />
+                            </div>
+                            {selectedProject.id === "taskplanner" ? (
+                              <figcaption className="mt-2 text-editorial-caption font-medium leading-tight text-muted">
+                                {t(index === 0 ? "portfolioPage.taskplannerScreenshotHomeCaption" : "portfolioPage.taskplannerScreenshotCalendarCaption")}
+                              </figcaption>
+                            ) : null}
+                          </figure>
+                        ))}
+                      </div>
+                    ) : null}
                   </div>
-                  <div>
-                    <p className={labelClass}>{t("portfolioPage.panelTaskLabel")}</p>
-                    <p className={blockClass}>{selectedCopy.task}</p>
+                  <div className="flex min-w-0 flex-col gap-4">
+                    <p className="text-editorial-base leading-snug text-muted">{selectedCopy.intro}</p>
+                    <div>
+                      <p className={labelClass}>{t("portfolioPage.panelTaskLabel")}</p>
+                      <p className={blockClass}>{selectedCopy.task}</p>
+                    </div>
+                    <div>
+                      <p className={labelClass}>{t("portfolioPage.panelDoneLabel")}</p>
+                      <p className={blockClass}>{selectedCopy.done}</p>
+                    </div>
+                    <div>
+                      <p className={labelClass}>{t("portfolioPage.panelEffectLabel")}</p>
+                      <p className={blockClass}>{selectedCopy.result}</p>
+                    </div>
+                    <div className="rounded-lg border border-primary/25 bg-primary/8 p-3">
+                      <p className="text-editorial-label font-semibold tracking-wide text-primary">{t("portfolioPage.panelTrustLabel")}</p>
+                      <p className="mt-1.5 text-editorial-sm font-medium leading-snug text-foreground">{selectedCopy.trust}</p>
+                    </div>
+                    {"href" in selectedProject ? (
+                      <a
+                        href={selectedProject.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex h-10 w-full items-center justify-center rounded-lg border border-primary/35 bg-primary/8 px-5 text-sm font-semibold text-primary transition-colors duration-200 hover:border-primary hover:bg-primary/12 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-fit"
+                      >
+                        {selectedProject.id === "taskplanner" ? t("portfolioPage.ctaOpenRuStore") : t("portfolioPage.ctaOpenProject")}
+                      </a>
+                    ) : null}
                   </div>
-                  <div>
-                    <p className={labelClass}>{t("portfolioPage.panelDoneLabel")}</p>
-                    <p className={blockClass}>{selectedCopy.done}</p>
-                  </div>
-                  <div>
-                    <p className={labelClass}>{t("portfolioPage.panelEffectLabel")}</p>
-                    <p className={blockClass}>{selectedCopy.result}</p>
-                  </div>
-                  <div className="rounded-lg border border-primary/25 bg-primary/8 p-3">
-                    <p className="text-editorial-label font-semibold tracking-wide text-primary">{t("portfolioPage.panelTrustLabel")}</p>
-                    <p className="mt-1.5 text-editorial-sm font-medium leading-snug text-foreground">{selectedCopy.trust}</p>
-                  </div>
-                  {"href" in selectedProject ? (
-                    <a
-                      href={selectedProject.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex h-10 w-full items-center justify-center rounded-lg border border-primary/35 bg-primary/8 px-5 text-sm font-semibold text-primary transition-colors duration-200 hover:border-primary hover:bg-primary/12 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-fit"
-                    >
-                      {selectedProject.id === "taskplanner" ? t("portfolioPage.ctaOpenRuStore") : t("portfolioPage.ctaOpenProject")}
-                    </a>
-                  ) : null}
                 </div>
               </div>
             </div>
