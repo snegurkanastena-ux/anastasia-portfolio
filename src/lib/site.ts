@@ -49,7 +49,8 @@ export const PROJECT_CASES = [
   {
     id: "runcoffee",
     href: "https://snegurkanastena-ux.github.io/run-coffee-demo/",
-    coverSrc: "/images/projects/runcoffee-club-cover.png",
+    coverSrc:
+      "https://api.microlink.io/?url=https%3A%2F%2Fsnegurkanastena-ux.github.io%2Frun-coffee-demo%2F&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&viewport.deviceScaleFactor=1",
     screenshots: [
       "/images/projects/runcoffee-app-content.png",
       "/images/projects/runcoffee-club-dashboard.png",
@@ -70,11 +71,12 @@ export const PROJECT_CASES = [
   },
   {
     id: "transformationCoach",
-    coverSrc: "/images/projects/transformation-coach-content.png",
+    coverSrc: "/images/projects/transformation-coach-cover.png",
+    screenshots: ["/images/projects/transformation-coach-content.png"],
   },
   {
     id: "openclawKuzya",
-    coverSrc: "/images/projects/openclaw-kuzya-cover.svg",
+    coverSrc: "/images/projects/openclaw-kuzya-avatar-cover.png",
   },
   {
     id: "businessStickers",
