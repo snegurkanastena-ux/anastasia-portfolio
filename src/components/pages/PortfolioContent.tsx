@@ -113,14 +113,6 @@ export function PortfolioContent() {
           result: t("portfolioPage.openclawKuzyaResult"),
           trust: t("portfolioPage.openclawKuzyaTrust"),
         },
-        rankofe: {
-          title: t("portfolioPage.rankofeTitle"),
-          intro: t("portfolioPage.rankofeIntro"),
-          task: t("portfolioPage.rankofeTask"),
-          done: t("portfolioPage.rankofeDone"),
-          result: t("portfolioPage.rankofeResult"),
-          trust: t("portfolioPage.rankofeTrust"),
-        },
         businessStickers: {
           title: t("portfolioPage.businessStickersTitle"),
           intro: t("portfolioPage.businessStickersIntro"),
@@ -181,7 +173,7 @@ export function PortfolioContent() {
         </header>
 
         <motion.div
-          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-7"
+          className="mt-12 grid auto-rows-fr grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-7"
           variants={listContainer(staggerLists)}
           initial="hidden"
           whileInView="visible"
@@ -193,7 +185,7 @@ export function PortfolioContent() {
             const blockClass = "mt-1.5 text-editorial-sm font-medium leading-snug text-foreground sm:text-editorial-base sm:leading-snug";
             const isOpen = openProject === project.id;
             return (
-              <motion.article key={project.id} variants={listItem} className={`group flex h-full flex-col ${cardMediaFrame}`}>
+              <motion.article key={project.id} variants={listItem} className={`group flex min-h-full flex-col ${cardMediaFrame}`}>
                 <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-muted-surface/40">
                   <Image
                     src={project.coverSrc}
@@ -203,7 +195,7 @@ export function PortfolioContent() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
-                <div className="flex flex-1 flex-col p-4 sm:p-5">
+                <div className="flex min-h-0 flex-1 flex-col p-4 sm:p-5">
                   <h2 className="heading-subsection text-pretty">{c.title}</h2>
                   <p className="mt-1.5 text-editorial-sm leading-snug text-muted sm:text-editorial-base">{c.intro}</p>
                   {isOpen ? (
@@ -231,15 +223,17 @@ export function PortfolioContent() {
                               <div className="relative aspect-[591/1280] overflow-hidden rounded-lg border border-border/20 bg-muted-surface/40 shadow-[0_14px_32px_rgb(var(--foreground)/0.12)]">
                                 <Image
                                   src={src}
-                                  alt={t(index === 0 ? "portfolioPage.taskplannerScreenshotHomeAlt" : "portfolioPage.taskplannerScreenshotCalendarAlt")}
+                                  alt={project.id === "taskplanner" ? t(index === 0 ? "portfolioPage.taskplannerScreenshotHomeAlt" : "portfolioPage.taskplannerScreenshotCalendarAlt") : `${c.title}: screen ${index + 1}`}
                                   fill
                                   className="object-cover"
                                   sizes="(max-width: 640px) 42vw, 150px"
                                 />
                               </div>
-                              <figcaption className="mt-2 text-editorial-caption font-medium leading-tight text-muted">
-                                {t(index === 0 ? "portfolioPage.taskplannerScreenshotHomeCaption" : "portfolioPage.taskplannerScreenshotCalendarCaption")}
-                              </figcaption>
+                              {project.id === "taskplanner" ? (
+                                <figcaption className="mt-2 text-editorial-caption font-medium leading-tight text-muted">
+                                  {t(index === 0 ? "portfolioPage.taskplannerScreenshotHomeCaption" : "portfolioPage.taskplannerScreenshotCalendarCaption")}
+                                </figcaption>
+                              ) : null}
                             </figure>
                           ))}
                         </div>
