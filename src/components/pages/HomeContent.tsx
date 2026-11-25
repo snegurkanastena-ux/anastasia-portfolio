@@ -276,7 +276,7 @@ export function HomeContent() {
                 >
                   <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-muted-surface/35">
                     <Image
-                      src={project.id === "runcoffee" ? "/images/projects/runcoffee-club-cover.png" : project.coverSrc}
+                      src={project.coverSrc}
                       alt=""
                       fill
                       className="object-cover"
