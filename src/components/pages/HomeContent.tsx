@@ -14,6 +14,7 @@ import { TextType } from "@/components/ui/TextType";
 import { TestimonialSection, type Testimonial } from "@/components/ui/testimonials";
 import { useLocale } from "@/contexts/LocaleContext";
 import { transitionBase } from "@/lib/motion";
+import { SERVICE_PAGES } from "@/lib/service-pages";
 import { PROJECT_CASES } from "@/lib/site";
 
 const sectionMotion = {
@@ -87,7 +88,7 @@ function HeroPhotoBlock({ imageAlt, name }: { imageAlt: string; name: string }) 
 
 
 export function HomeContent() {
-  const { t, locale } = useLocale();
+  const { t } = useLocale();
   const reduceMotion = useReducedMotion();
   const staggerLists = !reduceMotion;
 
@@ -98,14 +99,9 @@ export function HomeContent() {
       desc: t("home.featuredMelanoDesc"),
     },
     {
-      id: "neiroera" as const,
-      title: t("home.featuredNeiroTitle"),
-      desc: t("home.featuredNeiroDesc"),
-    },
-    {
-      id: "salieva" as const,
-      title: t("home.featuredSalievaTitle"),
-      desc: t("home.featuredSalievaDesc"),
+      id: "runcoffee" as const,
+      title: t("home.featuredCoffeeTitle"),
+      desc: t("home.featuredCoffeeDesc"),
     },
   ];
 
@@ -204,51 +200,34 @@ export function HomeContent() {
     },
   ];
 
-  const heroTitle = reduceMotion ? (
-    <h1 className="heading-hero max-w-[min(100%,30ch)]" aria-label={t("home.heroTitle")}>{t("home.heroTitle")}</h1>
-  ) : (
-    <h1 className="heading-hero max-w-[min(100%,30ch)]" aria-label={t("home.heroTitle")}>
-      <TextType
-        key={`${locale}-hero-h1`}
-        text={t("home.heroTitle")}
-        loop={false}
-        allowDelete={false}
-        startOnVisible={false}
-        typingSpeed={34}
-        initialDelay={0}
-        pauseDuration={0}
-        showCursor
-        hideCursorAfterMs={2000}
-        cursorCharacter="_"
-        cursorClassName="text-[rgb(var(--heading))] opacity-80"
-        className="font-display text-editorial-hero font-normal leading-[1.04] tracking-[-0.038em]"
-      />
-    </h1>
-  );
-
   return (
     <Container className="pb-10 pt-2 sm:pb-12 sm:pt-3 md:pb-14 lg:pb-16">
       {/* ── HERO ── */}
       <motion.section className="relative isolate overflow-hidden pb-8 pt-2 sm:pb-10 sm:pt-3" {...sectionMotion}>
         <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-4">
           <div className="flex flex-col gap-4 lg:col-span-7">
-            {heroTitle}
+            <p className="text-editorial-sm font-semibold text-primary">{t("home.heroTagline")}</p>
+            <h1 className="heading-hero max-w-[22ch] text-pretty">{t("home.heroTitle")}</h1>
             <p className="max-w-[min(100%,34ch)] text-editorial-base font-medium leading-snug text-foreground sm:text-editorial-body-lg">
               {t("home.heroSubtitle")}
             </p>
             <p className="max-w-[min(100%,40rem)] border-l-4 border-primary pl-5 text-editorial-sm font-medium leading-snug text-foreground sm:text-editorial-base">
               {t("home.heroProof")}
             </p>
+            <ul className="flex flex-wrap gap-x-5 gap-y-1 text-editorial-sm font-semibold">
+              <li>{t("home.heroLanding")} <span className="text-primary">{t(SERVICE_PAGES.landing.priceKey)}</span></li>
+              <li>{t("home.heroVisit")} <span className="text-primary">{t("servicesPage.s1Price")}</span></li>
+            </ul>
             <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
+              <ContactChoiceTrigger className={primaryCtaClassNames("lg") + " min-h-11 px-7"}>
+                {t("cta.discussSite")}
+              </ContactChoiceTrigger>
               <SiteIdeaTrigger
-                className={`${primaryCtaClassNames("lg")} h-11 min-h-[2.75rem] min-w-[10.5rem] rounded-lg px-7 text-editorial-sm font-semibold tracking-wide`}
+                className={secondaryCtaClassNames("lg") + " min-h-11 px-7"}
               >
                 {t("cta.siteIdea")}
               </SiteIdeaTrigger>
-              <Link
-                href="/portfolio"
-                className={`${secondaryCtaClassNames("lg")} h-11 min-h-[2.75rem] min-w-[10.5rem] px-7 text-editorial-sm`}
-              >
+              <Link href="/#projects" className="inline-flex min-h-11 items-center justify-center rounded-lg px-3 text-editorial-sm font-semibold text-primary underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
                 {t("cta.projects")}
               </Link>
             </div>
@@ -259,6 +238,64 @@ export function HomeContent() {
           </div>
         </div>
       </motion.section>
+
+      <section className="rounded-lg border border-primary/25 bg-card p-5 sm:p-7" aria-labelledby="landing-offer-title">
+        <div className="grid items-start gap-5 md:grid-cols-[1fr_auto]">
+          <div>
+            <h2 id="landing-offer-title" className="heading-section">{t("home.offerTitle")}</h2>
+            <p className="mt-3 max-w-2xl text-editorial-base leading-relaxed">{t("home.offerScope")}</p>
+            <p className="mt-2 text-editorial-sm text-muted">{t("home.offerTerms")}</p>
+          </div>
+          <div className="flex flex-col items-start gap-3 md:items-end">
+            <p className="font-display text-editorial-display-sm text-primary">{t(SERVICE_PAGES.landing.priceKey)}</p>
+            <Link href={SERVICE_PAGES.landing.path} className={primaryCtaClassNames("md")}>
+              {t("cta.serviceDetails")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED ── */}
+      <section id="projects" className={sectionGap + " scroll-mt-28"}>
+        <h2 className="heading-section">{t("home.featuredTitle")}</h2>
+        <motion.div
+          className="mt-6 grid grid-cols-1 gap-4 sm:mt-7 sm:grid-cols-2 lg:gap-5"
+          variants={listContainer(staggerLists)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-6% 0px" }}
+        >
+          {featured.map((item) => {
+            const project = PROJECT_CASES.find((p) => p.id === item.id);
+            if (!project) return null;
+            return (
+              <motion.div key={item.id} variants={listItem} className="h-full">
+                <Link
+                  href={"/portfolio#" + project.id}
+                  className={`group ${cardMediaFrame} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}
+                >
+                  <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-muted-surface/35">
+                    <Image
+                      src={project.id === "runcoffee" ? "/images/projects/runcoffee-club-cover.png" : project.coverSrc}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-4 sm:p-5">
+                    <h3 className="heading-subsection text-pretty">{item.title}</h3>
+                    <p className="mt-2 flex-1 text-editorial-sm leading-relaxed text-foreground sm:text-editorial-base">{item.desc}</p>
+                    <span className="mt-4 inline-flex h-9 w-full items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 group-hover:bg-primary-hover">
+                      {t("portfolioPage.ctaViewProject")}
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </section>
 
       {/* ── ABOUT ── */}
       <motion.section className={`relative border-t border-border/20 pt-8 ${sectionGap}`} {...sectionMotion}>
@@ -380,50 +417,6 @@ export function HomeContent() {
               <p className="mt-3 text-editorial-sm leading-relaxed text-foreground sm:text-editorial-base">{step.text}</p>
             </motion.article>
           ))}
-        </motion.div>
-      </motion.section>
-
-      {/* ── FEATURED ── */}
-      <motion.section className={sectionGap} {...sectionMotion}>
-        <HeadingTextType as="h2" text={t("home.featuredTitle")} typingSpeed={85} className="heading-section" />
-        <motion.div
-          className="mt-6 grid grid-cols-1 gap-4 sm:mt-7 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4"
-          variants={listContainer(staggerLists)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-6% 0px" }}
-        >
-          {featured.map((item) => {
-            const project = PROJECT_CASES.find((p) => p.id === item.id);
-            if (!project || !("href" in project)) return null;
-            return (
-              <motion.div key={item.id} variants={listItem} className="h-full">
-                <a
-                  href={project.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group ${cardMediaFrame} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}
-                >
-                  <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-muted-surface/35">
-                    <Image
-                      src={project.coverSrc}
-                      alt={item.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col p-4 sm:p-5">
-                    <h3 className="heading-subsection text-pretty">{item.title}</h3>
-                    <p className="mt-2 flex-1 text-editorial-sm leading-relaxed text-foreground sm:text-editorial-base">{item.desc}</p>
-                    <span className="mt-4 inline-flex h-9 w-full items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors duration-200 group-hover:bg-primary-hover">
-                      {t("cta.viewProject")}
-                    </span>
-                  </div>
-                </a>
-              </motion.div>
-            );
-          })}
         </motion.div>
       </motion.section>
 

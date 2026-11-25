@@ -205,7 +205,7 @@ export function PortfolioContent() {
           {PROJECT_CASES.map((project) => {
             const c = copy[project.id];
             return (
-              <motion.article key={project.id} variants={listItem} className={`group flex min-h-full flex-col ${cardMediaFrame}`}>
+              <motion.article id={project.id} key={project.id} variants={listItem} className={`group flex min-h-full scroll-mt-28 flex-col ${cardMediaFrame}`}>
                 <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-muted-surface/40">
                   <Image
                     src={project.coverSrc}

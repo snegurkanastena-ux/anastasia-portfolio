@@ -9,6 +9,7 @@ import { primaryCtaClassNames, secondaryCtaClassNames } from "@/components/ui/Bu
 import { TextType } from "@/components/ui/TextType";
 import { useLocale } from "@/contexts/LocaleContext";
 import { transitionBase } from "@/lib/motion";
+import { SERVICE_PAGES } from "@/lib/service-pages";
 
 const sectionMotion = {
   initial: { opacity: 0, y: 18 },
@@ -42,8 +43,8 @@ export function ServicesContent() {
 
   const items = [
     { title: t("servicesPage.s1"), price: t("servicesPage.s1Price"), when: t("servicesPage.s1When"), result: t("servicesPage.s1Result") },
-    { title: t("servicesPage.s2"), price: t("servicesPage.s2Price"), when: t("servicesPage.s2When"), result: t("servicesPage.s2Result") },
-    { title: t("servicesPage.s3"), price: t("servicesPage.s3Price"), when: t("servicesPage.s3When"), result: t("servicesPage.s3Result") },
+    { title: t("servicesPage.s2"), price: t("servicesPage.s2Price"), when: t("servicesPage.s2When"), result: t("servicesPage.s2Result"), detailsHref: SERVICE_PAGES.landing.path },
+    { title: t("servicesPage.s3"), price: t("servicesPage.s3Price"), when: t("servicesPage.s3When"), result: t("servicesPage.s3Result"), detailsHref: SERVICE_PAGES["expert-site"].path },
     { title: t("servicesPage.s4"), price: t("servicesPage.s4Price"), when: t("servicesPage.s4When"), result: t("servicesPage.s4Result") },
     { title: t("servicesPage.s5"), price: t("servicesPage.s5Price"), when: t("servicesPage.s5When"), result: t("servicesPage.s5Result") },
     { title: t("servicesPage.s6"), price: t("servicesPage.s6Price"), when: t("servicesPage.s6When"), result: t("servicesPage.s6Result") },
@@ -117,6 +118,11 @@ export function ServicesContent() {
                 <p className="mt-1.5 text-editorial-sm font-medium leading-snug text-foreground sm:text-editorial-base">{item.result}</p>
               </div>
             </div>
+            {item.detailsHref ? (
+              <Link href={item.detailsHref} className={secondaryCtaClassNames("md") + " mt-5 self-start"} aria-label={t("cta.serviceDetails") + " — " + item.title}>
+                {t("cta.serviceDetails")}
+              </Link>
+            ) : null}
           </motion.article>
         ))}
       </motion.div>

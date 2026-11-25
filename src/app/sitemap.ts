@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
+import { SERVICE_PAGES } from "@/lib/service-pages";
 
 const siteUrl = "https://www.xn----8sb1aregjk5f.xn--p1ai";
 
-const routes = ["", "/portfolio", "/services", "/contacts"] as const;
+const routes = ["", "/portfolio", "/services", ...Object.values(SERVICE_PAGES).map(({ path }) => path), "/contacts"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({

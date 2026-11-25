@@ -27,7 +27,9 @@
     "write": "Contact me",
     "viewProject": "Open",
     "viewServices": "View services",
-    "siteIdea": "Get a site idea"
+    "siteIdea": "Get a site idea",
+    "discussSite": "Discuss your website",
+    "serviceDetails": "Service details"
   },
   "contactDialog": {
     "title": "Write an email",
@@ -113,9 +115,9 @@
     "notFound": "Page not found"
   },
   "home": {
-    "heroTitle": "A website through an entrepreneur’s eyes, not a developer’s",
-    "heroSubtitle": "Modern websites for businesses and experts: business card sites, landing pages, portfolios, online stores, or working tools. No technical headache, with a clear process and support after launch.",
-    "heroProof": "15+ years in business, management, and sales. So I think not only about design, but about what your future client will see, understand, and feel.",
+    "heroTitle": "Landing pages and websites for experts and small businesses",
+    "heroSubtitle": "I’ll help shape your offer, build your website, and set up a way for customers to get in touch.",
+    "heroProof": "I bring 15+ years in business, management, and sales to how I plan what customers see and how they reach you.",
     "heroPortraitAlt": "Portrait of Anastasia Melnikova",
     "aboutTitle": "I connect websites, sales, visuals, and AI tools",
     "aboutSubtitle": "I use modern AI tools for structure, content, visuals, search preparation, and automation, but I do not build for the sake of technology. The goal is simple: help people understand the value, feel trust, and take the next step.",
@@ -178,12 +180,8 @@
     "how3Title": "03. Then implementation",
     "how3Text": "With style and logic in place, the build becomes faster, sharper, and stronger.",
     "featuredTitle": "Selected projects",
-    "featuredMelanoTitle": "melanomusic.ru",
-    "featuredMelanoDesc": "A digital showcase for a music project: atmosphere, navigation, and content presentation.",
-    "featuredNeiroTitle": "neiroera.com",
-    "featuredNeiroDesc": "A direction website: structure, visual tone, and a cohesive digital space.",
-    "featuredSalievaTitle": "Expert portfolio",
-    "featuredSalievaDesc": "A personal site/portfolio with calm editorial delivery focused on materials.",
+    "featuredMelanoTitle": "Melano Music",
+    "featuredMelanoDesc": "A music project website with a track catalogue and a form for commissioning a song.",
     "testimonialsTitle": "What people say after launch",
     "testimonialsSubtitle": "Short notes on speed, attention to detail, and how the finished page feels.",
     "testimonial1Quote": "She shipped a landing page I actually want to revisit—visuals and logic both land. She got the brief fast, without endless process.",
@@ -207,7 +205,15 @@
     "audienceItems": "experts|creators|digital projects|AI products|studios|anyone who needs a site with character|anyone who refuses a bland template page",
     "manifesto": "A good website is not just design and code. It is when a business looks professional, earns trust, and speaks to clients in clear language.",
     "finalTitle": "Let’s define what website your business actually needs",
-    "finalBody": "I can help choose the format, shape the structure, package the message, and launch the site without technical headache."
+    "finalBody": "I can help choose the format, shape the structure, package the message, and launch the site without technical headache.",
+    "heroTagline": "A website through an entrepreneur’s eyes",
+    "heroLanding": "Landing page",
+    "heroVisit": "Business card website",
+    "offerTitle": "A landing page for a service or launch",
+    "offerScope": "I’ll help shape your offer and build a page with benefits, examples or testimonials, answers to common questions, and an enquiry form.",
+    "offerTerms": "We’ll agree on the scope, timeline, and price after a short brief.",
+    "featuredCoffeeTitle": "Run Coffee Club / Rankofe",
+    "featuredCoffeeDesc": "A café landing page and a demo of its loyalty club with guest accounts, rewards, and a QR card."
   },
   "portfolioPage": {
     "title": "Projects that help businesses look stronger",
@@ -382,5 +388,43 @@
   "paymentPage": {
     "title": "Payment",
     "cta": "Proceed to payment"
+  },
+  "serviceDetails": {
+    "back": "All services",
+    "scopeTitle": "What the work covers",
+    "structure": "Structure",
+    "design": "Design and build",
+    "launch": "Launch preparation",
+    "caseLink": "Go to the case study",
+    "faqTitle": "Before we start",
+    "scheduleQuestion": "When will the website be ready?",
+    "contentQuestion": "What should I prepare?",
+    "handoffQuestion": "How do handover and support work?",
+    "landing": {
+      "title": "Landing page design and development",
+      "intro": "I’ll build a one-page website for your service, product, or launch. Visitors can understand your offer and contact you from a phone or computer.",
+      "structure": "I’ll discuss your goal and map out the offer, benefits, examples, frequently asked questions, and next action.",
+      "design": "I’ll design the page in your style, adapt it for mobile and desktop, and add an enquiry form or a messenger contact.",
+      "launch": "Before publishing, I’ll check the page and contact flow. We’ll discuss domain setup, analytics, and any additional integrations during the brief.",
+      "contact": "Discuss a landing page",
+      "message": "Hello! I’d like to discuss a landing page for my project.",
+      "caseSummary": "A café demo project. Visitors can learn about the loyalty club and continue to a guest account with rewards.",
+      "schedule": "I’ll give you a timeline after a short brief. It depends on the page scope, how ready the materials are, and design approval.",
+      "content": "Send a description of your service or product and any existing copy, photos, testimonials, or examples. We’ll agree on any new material needed.",
+      "handoff": "We’ll agree on the platform, access, handover, and revisions before starting. Post-launch support can be arranged separately."
+    },
+    "expert-site": {
+      "title": "Website for an expert or independent professional",
+      "intro": "I’ll build a website where customers can get to know you, choose a service, see your work, and book a session.",
+      "structure": "I’ll organise your services, experience, and approach so visitors can work out which service fits their needs.",
+      "design": "I’ll build the opening section and pages or sections for services, case studies, and testimonials, adapted for mobile and desktop.",
+      "launch": "I’ll set up the agreed booking method and test it before publication. We’ll discuss the domain, analytics, and any extra features during the brief.",
+      "contact": "Discuss an expert website",
+      "message": "Hello! I’d like to discuss a website for my services.",
+      "caseSummary": "Ekaterina Salieva’s personal website brings together a portrait, services, prices, and contact details so visitors can choose a service and get in touch.",
+      "schedule": "I’ll suggest a timeline after a short brief. It depends on the number of pages, how ready the materials are, and the booking method.",
+      "content": "A description of your services, a few examples, photos, and your contact details are enough to get started. We’ll work out what is needed for launch.",
+      "handoff": "Before we start, we’ll agree on the platform, access, revisions, and handover. Service and case study updates can be arranged after launch."
+    }
   }
 }
